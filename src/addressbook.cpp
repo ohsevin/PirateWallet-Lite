@@ -132,7 +132,7 @@ void AddressBook::open(MainWindow* parent, QLineEdit* target) {
         // Test if address is valid.
         if (!Settings::isValidAddress(addr)) {
             QMessageBox::critical(parent, QObject::tr("Address Format Error"), 
-                QObject::tr("%1 doesn't seem to be a valid Zcash address.")
+                QObject::tr("%1 doesn't seem to be a valid Pirate address.")
                     .arg(addr), 
                 QMessageBox::Ok);
             return;
@@ -273,13 +273,13 @@ void AddressBook::readFromStorage() {
     }
 
     // Special. 
-    // Add the default ZecWallet donation address if it isn't already present
-    // QList<QString> allAddresses;
-    // std::transform(allLabels.begin(), allLabels.end(), 
-    //     std::back_inserter(allAddresses), [=] (auto i) { return i.second; });
-    // if (!allAddresses.contains(Settings::getDonationAddr(true))) {
-    //     allLabels.append(QPair<QString, QString>("ZecWallet donation", Settings::getDonationAddr(true)));
-    // }
+    // Add the default PirateWallet donation address if it isn't already present
+    QList<QString> allAddresses;
+    std::transform(allLabels.begin(), allLabels.end(), 
+        std::back_inserter(allAddresses), [=] (auto i) { return i.second; });
+    if (!allAddresses.contains(Settings::getDonationAddr(true))) {
+       allLabels.append(QPair<QString, QString>("PirateWallet donation", Settings::getDonationAddr(true)));
+    }
 }
 
 void AddressBook::writeToStorage() {

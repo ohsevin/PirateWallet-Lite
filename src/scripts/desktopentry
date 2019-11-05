@@ -1,13 +1,13 @@
 [Desktop Entry]
-Name=Zecwallet-Lite
-Comment=Lightclient UI wallet for Zcash
+Name=PirateWallet-Lite
+Comment=Lightclient UI wallet for Pirate
 GenericName=Wallet
-Exec=/usr/local/bin/zecwallet-lite %u
-Icon=zecwallet-lite.xpm
+Exec=/usr/local/bin/piratewallet-lite %u
+Icon=piratewallet-lite.xpm
 Type=Application
 StartupNotify=true
-StartupWMClass=zecwallet-lite
+StartupWMClass=piratewallet-lite
 Categories=Utility;
-MimeType=x-scheme-handler/zcash;
-Keywords=zecwallet;
+MimeType=x-scheme-handler/pirate;
+Keywords=piratewallet;
 

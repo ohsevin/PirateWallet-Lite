@@ -526,7 +526,7 @@ bool MainWindow::confirmTx(Tx tx, RecurringPaymentInfo* rpi) {
             Addr->setText(fnSplitAddressForWrap(toAddr.addr));
             confirm.gridLayout->addWidget(Addr, row, 0, 1, 1);
 
-            // Amount (ZEC)
+            // Amount (ARRR)
             auto Amt = new QLabel(confirm.sendToAddrs);
             Amt->setObjectName(QString("Amt") % QString::number(i + 1));
             Amt->setText(toAddr.amount.toDecimalZECString());

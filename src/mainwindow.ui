@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>ZecWallet</string>
+   <string>PirateWallet-Lite</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../application.qrc">
@@ -1088,6 +1088,8 @@
     <addaction name="actionDonate"/>
     <addaction name="actionCheck_for_Updates"/>
     <addaction name="actionFile_a_bug"/>
+    <addaction name="actionDiscord"/>
+    <addaction name="actionWebsite"/>
     <addaction name="actionAbout"/>
    </widget>
    <widget class="QMenu" name="menuApps">
@@ -1134,6 +1136,16 @@
   <action name="actionDonate">
    <property name="text">
     <string>&amp;Donate</string>
+    </property>
+  </action>
+  <action name="actionDiscord">
+   <property name="text">
+    <string>&amp;Pirate Discord</string>
+   </property>
+  </action>
+  <action name="actionWebsite">
+   <property name="text">
+    <string>&amp;Pirate Website</string>
    </property>
   </action>
   <action name="actionCheck_for_Updates">

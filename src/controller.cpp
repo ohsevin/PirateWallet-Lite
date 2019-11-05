@@ -59,7 +59,7 @@ Controller::~Controller() {
 }
 
 
-// Called when a connection to zcashd is available. 
+// Called when a connection to pirated is available. 
 void Controller::setConnection(Connection* c) {
     if (c == nullptr) return;
 
@@ -67,7 +67,7 @@ void Controller::setConnection(Connection* c) {
 
     ui->statusBar->showMessage("Ready!");
 
-    // If we're allowed to get the Zec Price, get the prices
+    // If we're allowed to get the ARRR Price, get the prices
     if (Settings::getInstance()->getAllowFetchPrices())
         refreshZECPrice();
 
@@ -129,7 +129,7 @@ void Controller::noConnection() {
     ui->balTotal->setToolTip("");
 }
 
-/// This will refresh all the balance data from zcashd
+/// This will refresh all the balance data from pirated
 void Controller::refresh(bool force) {
     if (!zrpc->haveConnection()) 
         return noConnection();
@@ -153,7 +153,7 @@ void Controller::getInfoThenRefresh(bool force) {
             Settings::getInstance()->setTestnet(chainName == "test");
         };
 
-        // Recurring pamynets are testnet only
+        // Recurring payments are testnet only
         if (!Settings::getInstance()->isTestnet())
             main->disableRecurring();
 
@@ -191,14 +191,14 @@ void Controller::getInfoThenRefresh(bool force) {
             refreshTransactions();
         }
     }, [=](QString err) {
-        // zcashd has probably disappeared.
+        // pirated has probably disappeared.
         this->noConnection();
 
         // Prevent multiple dialog boxes, because these are called async
         static bool shown = false;
         if (!shown && prevCallSucceeded) { // show error only first time
             shown = true;
-            QMessageBox::critical(main, QObject::tr("Connection Error"), QObject::tr("There was an error connecting to zcashd. The error was") + ": \n\n"
+            QMessageBox::critical(main, QObject::tr("Connection Error"), QObject::tr("There was an error connecting to pirated. The error was") + ": \n\n"
                 + err, QMessageBox::StandardButton::Ok);
             shown = false;
         }
@@ -535,7 +535,7 @@ void Controller::checkForUpdate(bool silent) {
     if (!zrpc->haveConnection()) 
         return noConnection();
 
-    QUrl cmcURL("https://api.github.com/repos/adityapk00/zecwallet-lite/releases");
+    QUrl cmcURL("https://api.github.com/repos/MrMLynch/PirateWallet-Lite/releases");
 
     QNetworkRequest req;
     req.setUrl(cmcURL);
@@ -583,7 +583,7 @@ void Controller::checkForUpdate(bool silent) {
                             .arg(currentVersion.toString()),
                         QMessageBox::Yes, QMessageBox::Cancel);
                     if (ans == QMessageBox::Yes) {
-                        QDesktopServices::openUrl(QUrl("https://github.com/adityapk00/zecwallet-lite/releases"));
+                        QDesktopServices::openUrl(QUrl("https://github.com/MrMLynch/PirateWallet-Lite/releases"));
                     } else {
                         // If the user selects cancel, don't bother them again for this version
                         s.setValue("update/lastversion", maxVersion.toString());
@@ -604,12 +604,12 @@ void Controller::checkForUpdate(bool silent) {
     });
 }
 
-// Get the ZEC->USD price from coinmarketcap using their API
+// Get the ARRR->USD price from coinmarketcap using their API
 void Controller::refreshZECPrice() {
     if (!zrpc->haveConnection()) 
         return noConnection();
 
-    QUrl cmcURL("https://api.coinmarketcap.com/v1/ticker/");
+    QUrl cmcURL("https://api.coingecko.com/api/v3/simple/price?ids=pirate-chain&vs_currencies=btc%2Cusd%2Ceur&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true");
 
     QNetworkRequest req;
     req.setUrl(cmcURL);
@@ -641,14 +641,29 @@ void Controller::refreshZECPrice() {
                 return;
             }
 
-            for (const json& item : parsed.get<json::array_t>()) {
-                if (item["symbol"].get<json::string_t>() == Settings::getTokenName().toStdString()) {
-                    QString price = QString::fromStdString(item["price_usd"].get<json::string_t>());
-                    qDebug() << Settings::getTokenName() << " Price=" << price;
-                    Settings::getInstance()->setZECPrice(price.toDouble());
+            // Grab prices from CMC
+            //for (const json& item : parsed.get<json::array_t>()) {
+            //    if (item["symbol"].get<json::string_t>() == Settings::getTokenName().toStdString()) {
+            //        QString price = QString::fromStdString(item["price_usd"].get<json::string_t>());
+            //        qDebug() << Settings::getTokenName() << " Price=" << price;
+            //        Settings::getInstance()->setZECPrice(price.toDouble());
 
-                    return;
-                }
+            //        return;
+            //    }
+            //}
+
+            // Grab prices from CoinGecko
+            const json& item  = parsed.get<json::object_t>();
+            const json& arrr  = item["pirate-chain"].get<json::object_t>();
+
+            if (arrr["usd"] >= 0) {
+                qDebug() << "Found pirate-chain key in price json";
+                // TODO: support BTC/EUR prices as well
+                //QString price = QString::fromStdString(arrr["usd"].get<json::string_t>());
+                qDebug() << "ARRR = $" << QString::number((double)arrr["usd"]);
+                Settings::getInstance()->setZECPrice( arrr["usd"] );
+
+                return;
             }
         } catch (...) {
             // If anything at all goes wrong, just set the price to 0 and move on.
@@ -667,8 +682,8 @@ void Controller::shutdownZcashd() {
         Ui_ConnectionDialog connD;
         connD.setupUi(&d);
         connD.topIcon->setBasePixmap(QIcon(":/icons/res/icon.ico").pixmap(256, 256));
-        connD.status->setText(QObject::tr("Please wait for ZecWallet to exit"));
-        connD.statusDetail->setText(QObject::tr("Waiting for zcashd to exit"));
+        connD.status->setText(QObject::tr("Please wait for PirateWallet to exit"));
+        connD.statusDetail->setText(QObject::tr("Waiting for pirated to exit"));
 
         bool finished = false;
 

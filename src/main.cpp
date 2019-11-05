@@ -147,15 +147,15 @@ public:
 
         // Command line parser
         QCommandLineParser parser;
-        parser.setApplicationDescription("Shielded desktop light wallet for Zcash");
+        parser.setApplicationDescription("Shielded desktop light wallet for Pirate");
         parser.addHelpOption();
 
-        // Positional argument will specify a zcash payment URI
-        parser.addPositionalArgument("zcashURI", "An optional zcash URI to pay");
+        // Positional argument will specify a pirate payment URI
+        parser.addPositionalArgument("pirateURI", "An optional pirate URI to pay");
 
         parser.process(a);
 
-        // Check for a positional argument indicating a zcash payment URI
+        // Check for a positional argument indicating a pirate payment URI
         if (a.isSecondary()) {
             if (parser.positionalArguments().length() > 0) {
                 a.sendMessage(parser.positionalArguments()[0].toUtf8());    
@@ -164,15 +164,15 @@ public:
             return 0;            
         } 
 
-        QCoreApplication::setOrganizationName("zecwallet-org");
-        QCoreApplication::setApplicationName("zecwallet");
+        QCoreApplication::setOrganizationName("piratewallet-org");
+        QCoreApplication::setApplicationName("piratewallet");
 
         QString locale = QLocale::system().name();
         locale.truncate(locale.lastIndexOf('_'));   // Get the language code
         qDebug() << "Loading locale " << locale;
         
         QTranslator translator;
-        translator.load(QString(":/translations/res/zec_qt_wallet_") + locale);
+        translator.load(QString(":/translations/res/arrr_qt_wallet_") + locale);
         a.installTranslator(&translator);
 
         QIcon icon(":/icons/res/icon.ico");
@@ -205,14 +205,14 @@ public:
         
 
         w = new MainWindow();
-        w->setWindowTitle("Zecwallet Lightclient v" + QString(APP_VERSION));
+        w->setWindowTitle("PirateWallet Lightclient v" + QString(APP_VERSION));
 
         // If there was a payment URI on the command line, pay it
         if (parser.positionalArguments().length() > 0) {
             w->payZcashURI(parser.positionalArguments()[0]);
         }
 
-        // Listen for any secondary instances telling us about a zcash payment URI
+        // Listen for any secondary instances telling us about a pirate payment URI
         QObject::connect(&a, &SingleApplication::receivedMessage, [=] (quint32, QByteArray msg) {
             QString uri(msg);
 

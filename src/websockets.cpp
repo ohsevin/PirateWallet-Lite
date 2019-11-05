@@ -112,7 +112,7 @@ void WormholeClient::connect() {
     QObject::connect(m_webSocket, &QWebSocket::connected, this, &WormholeClient::onConnected);
     QObject::connect(m_webSocket, &QWebSocket::disconnected, this, &WormholeClient::closed);
 
-    m_webSocket->open(QUrl("wss://wormhole.zecqtwallet.com:443"));
+    m_webSocket->open(QUrl("wss://wormhole.pirate.black:443"));
     //m_webSocket->open(QUrl("ws://127.0.0.1:7070"));
 }
 
@@ -320,7 +320,7 @@ void AppDataServer::updateUIWithNewQRCode(MainWindow* mainwindow) {
     if (ipv4Addr.isEmpty())
         return;
     
-    QString uri = "ws://" + ipv4Addr + ":8237";
+    QString uri = "ws://" + ipv4Addr + ":8877";
 
     // Get a new secret
     unsigned char* secretBin = new unsigned char[crypto_secretbox_KEYBYTES];
@@ -356,7 +356,7 @@ QString AppDataServer::connDesc(AppConnectionType t) {
         return QObject::tr("Connected directly");
     }
     else {
-        return QObject::tr("Connected over the internet via ZecWallet wormhole service");
+        return QObject::tr("Connected over the internet via PirateWallet wormhole service");
     }
 }
 
@@ -673,7 +673,7 @@ void AppDataServer::processSendTx(QJsonObject sendTx, MainWindow* mainwindow, st
     }
 
     if (bals.isEmpty()) {
-        error(QObject::tr("No sapling or transparent addresses with enough balance to spend."));
+        error(QObject::tr("No addresses with enough balance to spend."));
         return;
     }
 

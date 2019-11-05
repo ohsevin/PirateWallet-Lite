@@ -143,7 +143,7 @@ RecurringPaymentInfo* Recurring::getNewRecurringFromTx(QWidget* parent, MainWind
         ui.txtMemo->setEnabled(false);
     }
 
-    // Wire up ZEC/USD toggle
+    // Wire up ARRR/USD toggle
     QObject::connect(ui.cmbCurrency, &QComboBox::currentTextChanged, [&](QString c) {
         if (tx.toAddrs.length() < 1)
             return;
@@ -575,9 +575,9 @@ void Recurring::showRecurringDialog(MainWindow* parent) {
                 menu.addAction(QObject::tr("View on block explorer"), [=] () {
                     QString url;
                     if (Settings::getInstance()->isTestnet()) {
-                        url = "https://explorer.testnet.z.cash/tx/" + txid;
+                        url = "https://explorer.pirate.black/tx/" + txid;
                     } else {
-                        url = "https://explorer.zcha.in/transactions/" + txid;
+                        url = "https://explorer.pirate.black/tx/" + txid;
                     }
                     QDesktopServices::openUrl(QUrl(url));
                 });

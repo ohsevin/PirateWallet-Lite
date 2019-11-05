@@ -4,7 +4,7 @@
 #include "ui_restoreseed.h"
 #include "ui_newwallet.h"
 
-#include "../lib/zecwalletlitelib.h"
+#include "../lib/arrrwalletlitelib.h"
 
 using json = nlohmann::json;
 
@@ -130,7 +130,7 @@ bool RestoreSeedPage::validatePage() {
     QString seed = form.txtSeed->toPlainText().replace(QRegExp("[ \n\r\t]+"), " ");
     if (seed.trimmed().split(" ").length() != 24) {
         QMessageBox::warning(this, tr("Failed to restore wallet"), 
-            tr("Zecwallet needs 24 words to restore wallet"),
+            tr("PirateWallet needs 24 words to restore wallet"),
             QMessageBox::Ok);
         return false;
     }

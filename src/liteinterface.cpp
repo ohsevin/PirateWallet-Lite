@@ -42,12 +42,13 @@ void LiteInterface::createNewZaddr(bool, const std::function<void(json)>& cb) {
     conn->doRPCWithDefaultErrorHandling("new", "z", cb);
 }
 
-void LiteInterface::createNewTaddr(const std::function<void(json)>& cb) {
-    if (conn == nullptr)
-        return;
+// Unnecessary for Pirate
+//void LiteInterface::createNewTaddr(const std::function<void(json)>& cb) {
+//    if (conn == nullptr)
+//        return;
 
-    conn->doRPCWithDefaultErrorHandling("new", "t", cb);
-}
+//    conn->doRPCWithDefaultErrorHandling("new", "t", cb);
+//}
 
 void LiteInterface::fetchPrivKey(QString addr, const std::function<void(json)>& cb) {
     if (conn == nullptr)
@@ -131,7 +132,7 @@ void LiteInterface::fetchInfo(const std::function<void(json)>& cb,
 }
 
 /**
- * Method to get all the private keys for both z and t addresses. It will make 2 batch calls,
+ * Method to get all the private keys for both z and R addresses. It will make 2 batch calls,
  * combine the result, and call the callback with a single list containing both the t-addr and z-addr
  * private keys
  */ 

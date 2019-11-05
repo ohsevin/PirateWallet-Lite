@@ -50,14 +50,14 @@ export PATH=$PATH:/usr/local/bin
 #Clean
 echo -n "Cleaning..............."
 make distclean >/dev/null 2>&1
-rm -f artifacts/macOS-zecwallet-v$APP_VERSION.dmg
+rm -f artifacts/macOS-piratewallet-v$APP_VERSION.dmg
 echo "[OK]"
 
 
 echo -n "Configuring............"
 # Build
 QT_STATIC=$QT_PATH src/scripts/dotranslations.sh >/dev/null
-$QT_PATH/bin/qmake zecwallet-lite.pro CONFIG+=release >/dev/null
+$QT_PATH/bin/qmake piratewallet-lite.pro CONFIG+=release >/dev/null
 echo "[OK]"
 
 
@@ -68,17 +68,17 @@ echo "[OK]"
 #Qt deploy
 echo -n "Deploying.............."
 mkdir artifacts >/dev/null 2>&1
-rm -f artifcats/zecwallet-lite.dmg >/dev/null 2>&1
+rm -f artifcats/piratewallet-lite.dmg >/dev/null 2>&1
 rm -f artifacts/rw* >/dev/null 2>&1
-$QT_PATH/bin/macdeployqt zecwallet-lite.app 
+$QT_PATH/bin/macdeployqt piratewallet-lite.app 
 echo "[OK]"
 
 
 echo -n "Building dmg..........."
-mv zecwallet-lite.app Zecwallet-Lite.app
-create-dmg --volname "Zecwallet-Lite-v$APP_VERSION" --volicon "res/logo.icns" --window-pos 200 120 --icon "Zecwallet-Lite.app" 200 190  --app-drop-link 600 185 --hide-extension "Zecwallet-Lite.app"  --window-size 800 400 --hdiutil-quiet --background res/dmgbg.png  artifacts/macOS-zecwallet-lite-v$APP_VERSION.dmg Zecwallet-Lite.app >/dev/null 2>&1
+mv piratewallet-lite.app PirateWallet-Lite.app
+create-dmg --volname "PirateWallet-Lite-v$APP_VERSION" --volicon "res/logo.icns" --window-pos 200 120 --icon "PirateWallet-Lite.app" 200 190  --app-drop-link 600 185 --hide-extension "PirateWallet-Lite.app"  --window-size 800 400 --hdiutil-quiet --background res/dmgbg.png  artifacts/macOS-piratewallet-lite-v$APP_VERSION.dmg PirateWallet-Lite.app >/dev/null 2>&1
 
-if [ ! -f artifacts/macOS-zecwallet-lite-v$APP_VERSION.dmg ]; then
+if [ ! -f artifacts/macOS-piratewallet-lite-v$APP_VERSION.dmg ]; then
     echo "[ERROR]"
     exit 1
 fi

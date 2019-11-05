@@ -71,7 +71,7 @@ bool Settings::isTAddress(QString addr) {
     if (!isValidAddress(addr))
         return false;
         
-    return addr.startsWith("t");
+    return addr.startsWith("R");
 }
 
 int Settings::getZcashdVersion() {
@@ -100,7 +100,7 @@ void Settings::setBlockNumber(int number) {
 
 bool Settings::isSaplingActive() {
     return  (isTestnet() && getBlockNumber() > 280000) ||
-           (!isTestnet() && getBlockNumber() > 419200);
+           (!isTestnet() && getBlockNumber() > 152855);
 }
 
 double Settings::getZECPrice() { 
@@ -154,15 +154,15 @@ void Settings::saveRestoreTableHeader(QTableView* table, QDialog* d, QString tab
 }
 
 QString Settings::getDefaultServer() {
-    return "https://lightd-main.zecwallet.co:443/";
+    return "https://lightwalletd.pirate.black:443/";
 }
 
 void Settings::openAddressInExplorer(QString address) {
     QString url;
     if (Settings::getInstance()->isTestnet()) {
-        url = "https://chain.so/address/ZECTEST/" + address;
+        url = "https://explorer.pirate.black/address/" + address;
     } else {
-        url = "https://zcha.in/accounts/" + address;
+        url = "https://explorer.pirate.black/address/" + address;
     }
     QDesktopServices::openUrl(QUrl(url));
 }
@@ -170,10 +170,10 @@ void Settings::openAddressInExplorer(QString address) {
 void Settings::openTxInExplorer(QString txid) {
     QString url;
     if (Settings::getInstance()->isTestnet()) {
-        url = "https://chain.so/tx/ZECTEST/" + txid;
+        url = "https://explorer.pirate.black/tx/" + txid;
     }
     else {
-        url = "https://zcha.in/transactions/" + txid;
+        url = "https://explorer.pirate.black/tx/" + txid;
     }
     QDesktopServices::openUrl(QUrl(url));
 }
@@ -183,9 +183,9 @@ const QString Settings::txidStatusMessage = QString(QObject::tr("Tx submitted (r
 
 QString Settings::getTokenName() {
     if (Settings::getInstance()->isTestnet()) {
-        return "TAZ";
+        return "ARRR";
     } else {
-        return "ZEC";
+        return "ARRR";
     }
 }
 
@@ -193,7 +193,7 @@ QString Settings::getDonationAddr() {
     if (Settings::getInstance()->isTestnet()) 
             return "ztestsapling1wn6889vznyu42wzmkakl2effhllhpe4azhu696edg2x6me4kfsnmqwpglaxzs7tmqsq7kudemp5";
     else 
-            return "zs1gv64eu0v2wx7raxqxlmj354y9ycznwaau9kduljzczxztvs4qcl00kn2sjxtejvrxnkucw5xx9u";
+            return "zs18z8penezg0dtqpuunwflt4auwam4pyeutgssm3udsame8tgh9lye9fynld89jshekdkevphzxsl";
 
 }
 
@@ -215,7 +215,7 @@ bool Settings::isValidAddress(QString addr) {
     QRegExp zcexp("^z[a-z0-9]{94}$",  Qt::CaseInsensitive);
     QRegExp zsexp("^z[a-z0-9]{77}$",  Qt::CaseInsensitive);
     QRegExp ztsexp("^ztestsapling[a-z0-9]{76}", Qt::CaseInsensitive);
-    QRegExp texp("^t[a-z0-9]{34}$", Qt::CaseInsensitive);
+    QRegExp texp("^R[a-z0-9]{34}$", Qt::CaseInsensitive);
 
     return  zcexp.exactMatch(addr)  || texp.exactMatch(addr) || 
             ztsexp.exactMatch(addr) || zsexp.exactMatch(addr);
@@ -232,12 +232,12 @@ QString Settings::paymentURIPretty(PaymentURI uri) {
 PaymentURI Settings::parseURI(QString uri) {
     PaymentURI ans;
 
-    if (!uri.startsWith("zcash:")) {
-        ans.error = "Not a zcash payment URI";
+    if (!uri.startsWith("pirate:")) {
+        ans.error = "Not a Pirate payment URI";
         return ans;
     }
 
-    uri = uri.right(uri.length() - QString("zcash:").length());
+    uri = uri.right(uri.length() - QString("pirate:").length());
     
     QRegExp re("([a-zA-Z0-9]+)");
     int pos;

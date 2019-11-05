@@ -38,7 +38,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 	    
     ui->setupUi(this);
-    logger = new Logger(this, QDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)).filePath("zec-qt-wallet.log"));
+    logger = new Logger(this, QDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)).filePath("arrr-qt-wallet.log"));
 
     // Status Bar
     setupStatusBar();
@@ -54,8 +54,13 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // File a bug
     QObject::connect(ui->actionFile_a_bug, &QAction::triggered, [=]() {
-        QDesktopServices::openUrl(QUrl("https://github.com/adityapk00/zecwallet-lite/issues/new"));
+        QDesktopServices::openUrl(QUrl("https://github.com/MrMLynch/PirateWallet-Lite/issues/new"));
     });
+
+    // Set up discord and website actions
+    QObject::connect(ui->actionDiscord, &QAction::triggered, this, &MainWindow::discord);
+
+    QObject::connect(ui->actionWebsite, &QAction::triggered, this, &MainWindow::website);
 
     // Set up check for updates action
     QObject::connect(ui->actionCheck_for_Updates, &QAction::triggered, [=] () {
@@ -124,7 +129,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tabWidget->setCurrentIndex(0);
 
 
-    // The zcashd tab is hidden by default, and only later added in if the embedded zcashd is started
+    // The pirated tab is hidden by default, and only later added in if the embedded zcashd is started
     zcashdtab = ui->tabWidget->widget(4);
     ui->tabWidget->removeTab(4);
 
@@ -150,9 +155,9 @@ MainWindow::MainWindow(QWidget *parent) :
 }
  
 void MainWindow::createWebsocket(QString wormholecode) {
-    qDebug() << "Listening for app connections on port 8237";
+    qDebug() << "Listening for app connections on port 8877";
     // Create the websocket server, for listening to direct connections
-    wsserver = new WSServer(8237, false, this);
+    wsserver = new WSServer(8877, false, this);
 
     if (!wormholecode.isEmpty()) {
         // Connect to the wormhole service
@@ -398,7 +403,7 @@ void MainWindow::setupSettingsModal() {
         QObject::connect(settings.comboBoxTheme, &QComboBox::currentTextChanged, [=] (QString theme_name) {
             this->slot_change_theme(theme_name);
             // Tell the user to restart
-            QMessageBox::information(this, tr("Restart"), tr("Please restart ZecWallet to have the theme apply"), QMessageBox::Ok);
+            QMessageBox::information(this, tr("Restart"), tr("Please restart PirateWallet to have the theme apply"), QMessageBox::Ok);
         });
 
         // Check for updates
@@ -417,7 +422,7 @@ void MainWindow::setupSettingsModal() {
         // Enable the troubleshooting options only if using embedded zcashd
         if (!rpc->isEmbedded()) {
             settings.chkRescan->setEnabled(false);
-            settings.chkRescan->setToolTip(tr("You're using an external zcashd. Please restart zcashd with -rescan"));
+            settings.chkRescan->setToolTip(tr("You're using an external pirated. Please restart pirated with -rescan"));
         }
 
         if (settingsDialog.exec() == QDialog::Accepted) {
@@ -455,6 +460,15 @@ void MainWindow::addressBook() {
     AddressBook::open(this);
 }
 
+void MainWindow::discord() {
+    QString url = "https://pirate.black/discord/";
+    QDesktopServices::openUrl(QUrl(url));
+}
+
+void MainWindow::website() {
+    QString url = "https://pirate.black";
+    QDesktopServices::openUrl(QUrl(url));
+}
 
 void MainWindow::donate() {
     // Set up a donation to me :)
@@ -462,10 +476,10 @@ void MainWindow::donate() {
 
     ui->Address1->setText(Settings::getDonationAddr());
     ui->Address1->setCursorPosition(0);
-    ui->Amount1->setText("0.01");
-    ui->MemoTxt1->setText(tr("Thanks for supporting ZecWallet!"));
+    ui->Amount1->setText("100");
+    ui->MemoTxt1->setText(tr("Thanks for supporting PirateWallet!"));
 
-    ui->statusBar->showMessage(tr("Donate 0.01 ") % Settings::getTokenName() % tr(" to support ZecWallet"));
+    ui->statusBar->showMessage(tr("Donate 100 ") % Settings::getTokenName() % tr(" to support PirateWallet"));
 
     // And switch to the send tab.
     ui->tabWidget->setCurrentIndex(1);
@@ -510,7 +524,7 @@ void MainWindow::balancesReady() {
     // There is a pending URI payment (from the command line, or from a secondary instance),
     // process it.
     if (!pendingURIPayment.isEmpty()) {
-        qDebug() << "Paying zcash URI";
+        qDebug() << "Paying pirate URI";
         payZcashURI(pendingURIPayment);
         pendingURIPayment = "";
     }
@@ -533,7 +547,7 @@ bool MainWindow::eventFilter(QObject *object, QEvent *event) {
 }
 
 
-// Pay the Zcash URI by showing a confirmation window. If the URI parameter is empty, the UI
+// Pay the Pirate URI by showing a confirmation window. If the URI parameter is empty, the UI
 // will prompt for one. If the myAddr is empty, then the default from address is used to send
 // the transaction.
 void MainWindow::payZcashURI(QString uri, QString myAddr) {
@@ -546,8 +560,8 @@ void MainWindow::payZcashURI(QString uri, QString myAddr) {
 
     // If there was no URI passed, ask the user for one.
     if (uri.isEmpty()) {
-        uri = QInputDialog::getText(this, tr("Paste Zcash URI"),
-            "Zcash URI" + QString(" ").repeated(180));
+        uri = QInputDialog::getText(this, tr("Paste Pirate URI"),
+            "Pirate URI" + QString(" ").repeated(180));
     }
 
     // If there's no URI, just exit
@@ -558,8 +572,8 @@ void MainWindow::payZcashURI(QString uri, QString myAddr) {
     qDebug() << "Received URI " << uri;
     PaymentURI paymentInfo = Settings::parseURI(uri);
     if (!paymentInfo.error.isEmpty()) {
-        QMessageBox::critical(this, tr("Error paying zcash URI"), 
-                tr("URI should be of the form 'zcash:<addr>?amt=x&memo=y") + "\n" + paymentInfo.error);
+        QMessageBox::critical(this, tr("Error paying pirate URI"), 
+                tr("URI should be of the form 'pirate:<addr>?amt=x&memo=y") + "\n" + paymentInfo.error);
         return;
     }
 
@@ -633,7 +647,7 @@ void MainWindow::payZcashURI(QString uri, QString myAddr) {
  */
 void MainWindow::exportTransactions() {
     // First, get the export file name
-    QString exportName = "zcash-transactions-" + QDateTime::currentDateTime().toString("yyyyMMdd") + ".csv";
+    QString exportName = "pirate-transactions-" + QDateTime::currentDateTime().toString("yyyyMMdd") + ".csv";
 
     QUrl csvName = QFileDialog::getSaveFileUrl(this, 
             tr("Export transactions"), exportName, "CSV file (*.csv)");
@@ -681,7 +695,7 @@ void MainWindow::exportSeed() {
         // Wire up save button
         QObject::connect(pui.buttonBox->button(QDialogButtonBox::Save), &QPushButton::clicked, [=] () {
             QString fileName = QFileDialog::getSaveFileName(this, tr("Save File"),
-                            "zcash-seed.txt");
+                            "pirate-seed.txt");
             QFile file(fileName);
             if (!file.open(QIODevice::WriteOnly)) {
                 QMessageBox::information(this, tr("Unable to open file"), file.errorString());
@@ -742,7 +756,7 @@ void MainWindow::exportKeys(QString addr) {
         // Wire up save button
         QObject::connect(pui.buttonBox->button(QDialogButtonBox::Save), &QPushButton::clicked, [=] () {
             QString fileName = QFileDialog::getSaveFileName(this, tr("Save File"),
-                            allKeys ? "zcash-all-privatekeys.txt" : "zcash-privatekey.txt");
+                            allKeys ? "pirate-all-privatekeys.txt" : "pirate-privatekey.txt");
             QFile file(fileName);
             if (!file.open(QIODevice::WriteOnly)) {
                 QMessageBox::information(this, tr("Unable to open file"), file.errorString());
@@ -860,7 +874,7 @@ void MainWindow::setupTransactionsTab() {
         });
 
         // Payment Request
-        if (!memo.isEmpty() && memo.startsWith("zcash:")) {
+        if (!memo.isEmpty() && memo.startsWith("pirate:")) {
             menu.addAction(tr("View Payment Request"), [=] () {
                 RequestDialog::showPaymentConfirmation(this, memo);
             });
@@ -914,7 +928,8 @@ void MainWindow::addNewZaddr(bool sapling) {
         rpc->refreshAddresses();
 
         // Just double make sure the z-address is still checked
-        if ( sapling && ui->rdioZSAddr->isChecked() ) {
+        // if ( sapling && ui->rdioZSAddr->isChecked() ) {
+        if ( sapling ) {
             ui->listReceiveAddresses->insertItem(0, addr); 
             ui->listReceiveAddresses->setCurrentIndex(0);
 
@@ -958,33 +973,35 @@ std::function<void(bool)> MainWindow::addZAddrsToComboList(bool sapling) {
 }
 
 void MainWindow::setupReceiveTab() {
-    auto addNewTAddr = [=] () {
-        rpc->createNewTaddr([=] (json reply) {
-            QString addr = QString::fromStdString(reply.get<json::array_t>()[0]);
-            // Make sure the RPC class reloads the t-addrs for future use
-            rpc->refreshAddresses();
+    // Unnecessary for Pirate * ZADDR_ONLY
+    // auto addNewTAddr = [=] () {
+    //     rpc->createNewTaddr([=] (json reply) {
+    //         QString addr = QString::fromStdString(reply.get<json::array_t>()[0]);
+    //         // Make sure the RPC class reloads the t-addrs for future use
+    //         rpc->refreshAddresses();
 
-            // Just double make sure the t-address is still checked
-            if (ui->rdioTAddr->isChecked()) {
-                ui->listReceiveAddresses->insertItem(0, addr);
-                ui->listReceiveAddresses->setCurrentIndex(0);
+    //         // Just double make sure the t-address is still checked
+    //         if (ui->rdioTAddr->isChecked()) {
+    //             ui->listReceiveAddresses->insertItem(0, addr);
+    //             ui->listReceiveAddresses->setCurrentIndex(0);
 
-                ui->statusBar->showMessage(tr("Created new t-Addr"), 10 * 1000);
-            }
-        });
-    };
+    //             ui->statusBar->showMessage(tr("Created new t-Addr"), 10 * 1000);
+    //         }
+    //     });
+    // };
 
+    // Unnecessary for Pirate * ZADDR_ONLY
     // Connect t-addr radio button
-    QObject::connect(ui->rdioTAddr, &QRadioButton::toggled, [=] (bool checked) { 
-        // Whenever the t-address is selected, we generate a new address, because we don't
-        // want to reuse t-addrs
-        if (checked) { 
-            updateTAddrCombo(checked);
-        } 
+    // QObject::connect(ui->rdioTAddr, &QRadioButton::toggled, [=] (bool checked) { 
+    //     // Whenever the t-address is selected, we generate a new address, because we don't
+    //     // want to reuse t-addrs
+    //     if (checked) { 
+    //         updateTAddrCombo(checked);
+    //     } 
 
-        // Toggle the "View all addresses" button as well
-        ui->btnViewAllAddresses->setVisible(checked);
-    });
+    //     // Toggle the "View all addresses" button as well
+    //     ui->btnViewAllAddresses->setVisible(checked);
+    // });
 
     // View all addresses goes to "View all private keys"
     QObject::connect(ui->btnViewAllAddresses, &QPushButton::clicked, [=] () {
@@ -1028,25 +1045,29 @@ void MainWindow::setupReceiveTab() {
         d.exec();
     });
 
-    QObject::connect(ui->rdioZSAddr, &QRadioButton::toggled, addZAddrsToComboList(true));
+    // Unnecessary for Pirate * ZADDR_ONLY
+    // QObject::connect(ui->rdioZSAddr, &QRadioButton::toggled, addZAddrsToComboList(true));
 
     // Explicitly get new address button.
     QObject::connect(ui->btnReceiveNewAddr, &QPushButton::clicked, [=] () {
         if (!rpc->getConnection())
             return;
 
-        if (ui->rdioZSAddr->isChecked()) {
-            addNewZaddr(true);
-        } else if (ui->rdioTAddr->isChecked()) {
-            addNewTAddr();
-        }
+        addNewZaddr(true);
+
+        // Unnecessary for Pirate * ZADDR_ONLY
+        // if (ui->rdioZSAddr->isChecked()) {
+        //     addNewZaddr(true);
+        // } else if (ui->rdioTAddr->isChecked()) {
+        //     addNewTAddr();
+        // }
     });
 
     // Focus enter for the Receive Tab
     QObject::connect(ui->tabWidget, &QTabWidget::currentChanged, [=] (int tab) {
         if (tab == 2) {
             // Switched to receive tab, select the z-addr radio button
-            ui->rdioZSAddr->setChecked(true);
+            // ui->rdioZSAddr->setChecked(true);
             ui->btnViewAllAddresses->setVisible(false);
             
             // And then select the first one
@@ -1212,12 +1233,15 @@ void MainWindow::updateTAddrCombo(bool checked) {
 // Updates the labels everywhere on the UI. Call this after the labels have been updated
 void MainWindow::updateLabels() {
     // Update the Receive tab
-    if (ui->rdioTAddr->isChecked()) {
-        updateTAddrCombo(true);
-    }
-    else {
-        addZAddrsToComboList(ui->rdioZSAddr->isChecked())(true);
-    }
+    addZAddrsToComboList(true);
+
+    // Unnecessary for Pirate * ZADDR_ONLY
+    // if (ui->rdioTAddr->isChecked()) {
+    //     updateTAddrCombo(true);
+    // }
+    // else {
+    //     addZAddrsToComboList(ui->rdioZSAddr->isChecked())(true);
+    // }
 
     // Update the autocomplete
     updateLabelsAutoComplete();

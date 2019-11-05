@@ -7,7 +7,7 @@
 #include "controller.h"
 
 
-#include "../lib/zecwalletlitelib.h"
+#include "../lib/arrrwalletlitelib.h"
 
 #include "precompiled.h"
 
