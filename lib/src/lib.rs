@@ -7,7 +7,7 @@ use std::ffi::{CStr, CString};
 use std::sync::{Mutex, Arc};
 use std::cell::RefCell;
 
-use zecwalletlitelib::{commands, lightclient::{LightClient, LightClientConfig}};
+use arrrwalletlitelib::{commands, lightclient::{LightClient, LightClientConfig}};
 
 // We'll use a MUTEX to store a global lightclient instance, 
 // so we don't have to keep creating it. We need to store it here, in rust

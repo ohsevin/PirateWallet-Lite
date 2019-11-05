@@ -10,18 +10,18 @@ PWD := $(shell pwd)
 
 all: release
 
-winrelease: target/x86_64-pc-windows-gnu/release/zecwalletlite.lib
+winrelease: target/x86_64-pc-windows-gnu/release/arrrwalletlite.lib
 
-target/x86_64-pc-windows-gnu/release/zecwalletlite.lib: src/lib.rs Cargo.toml
+target/x86_64-pc-windows-gnu/release/arrrwalletlite.lib: src/lib.rs Cargo.toml
 	SODIUM_LIB_DIR="$(PWD)/libsodium-mingw/" cargo build --lib --release --target x86_64-pc-windows-gnu
 
-release: target/release/zecwalletlite.$(EXT)
-debug: target/debug/zecwalletlite.$(EXT) 
+release: target/release/arrrwalletlite.$(EXT)
+debug: target/debug/arrrwalletlite.$(EXT) 
 
-target/release/zecwalletlite.$(EXT): src/lib.rs Cargo.toml
+target/release/arrrwalletlite.$(EXT): src/lib.rs Cargo.toml
 	LIBS="" CFLAGS=$(CFLAGS) cargo build --lib --release
 
-target/debug/zecwalletlite.$(EXT): src/lib.rs Cargo.toml
+target/debug/arrrwalletlite.$(EXT): src/lib.rs Cargo.toml
 	LIBS="" CFLAGS=$(CFLAGS) cargo build --lib
 
 clean:
