@@ -154,7 +154,7 @@ void Settings::saveRestoreTableHeader(QTableView* table, QDialog* d, QString tab
 }
 
 QString Settings::getDefaultServer() {
-    return "https://lightwalletd.pirate.black:443/";
+    return "https://lightd.pirate.black:443/";
 }
 
 void Settings::openAddressInExplorer(QString address) {

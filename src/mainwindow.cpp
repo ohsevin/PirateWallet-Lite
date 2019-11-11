@@ -928,8 +928,7 @@ void MainWindow::addNewZaddr(bool sapling) {
         rpc->refreshAddresses();
 
         // Just double make sure the z-address is still checked
-        // if ( sapling && ui->rdioZSAddr->isChecked() ) {
-        if ( sapling ) {
+        if ( sapling && ui->rdioZSAddr->isChecked() ) {
             ui->listReceiveAddresses->insertItem(0, addr); 
             ui->listReceiveAddresses->setCurrentIndex(0);
 
@@ -973,35 +972,33 @@ std::function<void(bool)> MainWindow::addZAddrsToComboList(bool sapling) {
 }
 
 void MainWindow::setupReceiveTab() {
-    // Unnecessary for Pirate * ZADDR_ONLY
-    // auto addNewTAddr = [=] () {
-    //     rpc->createNewTaddr([=] (json reply) {
-    //         QString addr = QString::fromStdString(reply.get<json::array_t>()[0]);
-    //         // Make sure the RPC class reloads the t-addrs for future use
-    //         rpc->refreshAddresses();
+    auto addNewTAddr = [=] () {
+        rpc->createNewTaddr([=] (json reply) {
+            QString addr = QString::fromStdString(reply.get<json::array_t>()[0]);
+            // Make sure the RPC class reloads the t-addrs for future use
+            rpc->refreshAddresses();
 
-    //         // Just double make sure the t-address is still checked
-    //         if (ui->rdioTAddr->isChecked()) {
-    //             ui->listReceiveAddresses->insertItem(0, addr);
-    //             ui->listReceiveAddresses->setCurrentIndex(0);
+            // Just double make sure the t-address is still checked
+            if (ui->rdioTAddr->isChecked()) {
+                ui->listReceiveAddresses->insertItem(0, addr);
+                ui->listReceiveAddresses->setCurrentIndex(0);
 
-    //             ui->statusBar->showMessage(tr("Created new t-Addr"), 10 * 1000);
-    //         }
-    //     });
-    // };
+                ui->statusBar->showMessage(tr("Created new t-Addr"), 10 * 1000);
+            }
+        });
+    };
 
-    // Unnecessary for Pirate * ZADDR_ONLY
     // Connect t-addr radio button
-    // QObject::connect(ui->rdioTAddr, &QRadioButton::toggled, [=] (bool checked) { 
-    //     // Whenever the t-address is selected, we generate a new address, because we don't
-    //     // want to reuse t-addrs
-    //     if (checked) { 
-    //         updateTAddrCombo(checked);
-    //     } 
+    QObject::connect(ui->rdioTAddr, &QRadioButton::toggled, [=] (bool checked) { 
+        // Whenever the t-address is selected, we generate a new address, because we don't
+        // want to reuse t-addrs
+        if (checked) { 
+            updateTAddrCombo(checked);
+        } 
 
-    //     // Toggle the "View all addresses" button as well
-    //     ui->btnViewAllAddresses->setVisible(checked);
-    // });
+        // Toggle the "View all addresses" button as well
+        ui->btnViewAllAddresses->setVisible(checked);
+    });
 
     // View all addresses goes to "View all private keys"
     QObject::connect(ui->btnViewAllAddresses, &QPushButton::clicked, [=] () {
@@ -1045,29 +1042,25 @@ void MainWindow::setupReceiveTab() {
         d.exec();
     });
 
-    // Unnecessary for Pirate * ZADDR_ONLY
-    // QObject::connect(ui->rdioZSAddr, &QRadioButton::toggled, addZAddrsToComboList(true));
+    QObject::connect(ui->rdioZSAddr, &QRadioButton::toggled, addZAddrsToComboList(true));
 
     // Explicitly get new address button.
     QObject::connect(ui->btnReceiveNewAddr, &QPushButton::clicked, [=] () {
         if (!rpc->getConnection())
             return;
 
-        addNewZaddr(true);
-
-        // Unnecessary for Pirate * ZADDR_ONLY
-        // if (ui->rdioZSAddr->isChecked()) {
-        //     addNewZaddr(true);
-        // } else if (ui->rdioTAddr->isChecked()) {
-        //     addNewTAddr();
-        // }
+        if (ui->rdioZSAddr->isChecked()) {
+            addNewZaddr(true);
+        } else if (ui->rdioTAddr->isChecked()) {
+            addNewTAddr();
+        }
     });
 
     // Focus enter for the Receive Tab
     QObject::connect(ui->tabWidget, &QTabWidget::currentChanged, [=] (int tab) {
         if (tab == 2) {
             // Switched to receive tab, select the z-addr radio button
-            // ui->rdioZSAddr->setChecked(true);
+            ui->rdioZSAddr->setChecked(true);
             ui->btnViewAllAddresses->setVisible(false);
             
             // And then select the first one
@@ -1233,15 +1226,12 @@ void MainWindow::updateTAddrCombo(bool checked) {
 // Updates the labels everywhere on the UI. Call this after the labels have been updated
 void MainWindow::updateLabels() {
     // Update the Receive tab
-    addZAddrsToComboList(true);
-
-    // Unnecessary for Pirate * ZADDR_ONLY
-    // if (ui->rdioTAddr->isChecked()) {
-    //     updateTAddrCombo(true);
-    // }
-    // else {
-    //     addZAddrsToComboList(ui->rdioZSAddr->isChecked())(true);
-    // }
+    if (ui->rdioTAddr->isChecked()) {
+        updateTAddrCombo(true);
+    }
+    else {
+        addZAddrsToComboList(ui->rdioZSAddr->isChecked())(true);
+    }
 
     // Update the autocomplete
     updateLabelsAutoComplete();

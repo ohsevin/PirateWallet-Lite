@@ -52,7 +52,7 @@
           </size>
          </property>
          <property name="text">
-          <string>Lightwalletd Server - default is: https://lightwalletd.pirate.black:443</string>
+          <string>Lightwalletd Server - default is: https://lightd.pirate.black:443</string>
          </property>
         </widget>
        </item>
