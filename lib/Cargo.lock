@@ -1051,7 +1051,7 @@ version = "0.1.0"
 dependencies = [
  "lazy_static 1.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.2.65 (registry+https://github.com/rust-lang/crates.io-index)",
- "arrrwalletlitelib 0.1.0 (git+https://github.com/MrMLynch/pirate-light-cli?rev=7595296b65513b549a6e64f06d05cddf28ef3db7)",
+ "arrrwalletlitelib 0.1.0 (git+https://github.com/MrMLynch/pirate-light-cli?rev=972d70110ff3886378a24057560a7f4ace55e619)",
 ]
 
 [[package]]
@@ -2266,7 +2266,7 @@ dependencies = [
 [[package]]
 name = "arrrwalletlitelib"
 version = "0.1.0"
-source = "git+https://github.com/MrMLynch/pirate-light-cli?rev=7595296b65513b549a6e64f06d05cddf28ef3db7#7595296b65513b549a6e64f06d05cddf28ef3db7"
+source = "git+https://github.com/MrMLynch/pirate-light-cli?rev=972d70110ff3886378a24057560a7f4ace55e619#972d70110ff3886378a24057560a7f4ace55e619"
 dependencies = [
  "base58 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "bellman 0.1.0 (git+https://github.com/MrMLynch/librustzcash.git?rev=8a1253de7d73190c2a1f78e214271c1a3bfcd718)",
@@ -2562,4 +2562,4 @@ dependencies = [
 "checksum zcash_client_backend 0.0.0 (git+https://github.com/MrMLynch/librustzcash.git?rev=8a1253de7d73190c2a1f78e214271c1a3bfcd718)" = "<none>"
 "checksum zcash_primitives 0.0.0 (git+https://github.com/MrMLynch/librustzcash.git?rev=8a1253de7d73190c2a1f78e214271c1a3bfcd718)" = "<none>"
 "checksum zcash_proofs 0.0.0 (git+https://github.com/MrMLynch/librustzcash.git?rev=8a1253de7d73190c2a1f78e214271c1a3bfcd718)" = "<none>"
-"checksum arrrwalletlitelib 0.1.0 (git+https://github.com/MrMLynch/pirate-light-cli?rev=7595296b65513b549a6e64f06d05cddf28ef3db7)" = "<none>"
+"checksum arrrwalletlitelib 0.1.0 (git+https://github.com/MrMLynch/pirate-light-cli?rev=972d70110ff3886378a24057560a7f4ace55e619)" = "<none>"
