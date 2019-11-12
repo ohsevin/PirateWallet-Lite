@@ -99,7 +99,7 @@ void Settings::setBlockNumber(int number) {
 }
 
 bool Settings::isSaplingActive() {
-    return  (isTestnet() && getBlockNumber() > 280000) ||
+    return  (isTestnet() && getBlockNumber() > 0) ||
            (!isTestnet() && getBlockNumber() > 152855);
 }
 
@@ -183,7 +183,7 @@ const QString Settings::txidStatusMessage = QString(QObject::tr("Tx submitted (r
 
 QString Settings::getTokenName() {
     if (Settings::getInstance()->isTestnet()) {
-        return "ARRR";
+        return "ARRRt";
     } else {
         return "ARRR";
     }
@@ -212,10 +212,10 @@ bool Settings::isValidSaplingPrivateKey(QString pk) {
 }
 
 bool Settings::isValidAddress(QString addr) {
-    QRegExp zcexp("^z[a-z0-9]{94}$",  Qt::CaseInsensitive);
+    //QRegExp zcexp("^z[a-z0-9]{94}$",  Qt::CaseInsensitive);
     QRegExp zsexp("^z[a-z0-9]{77}$",  Qt::CaseInsensitive);
     QRegExp ztsexp("^ztestsapling[a-z0-9]{76}", Qt::CaseInsensitive);
-    QRegExp texp("^R[a-z0-9]{34}$", Qt::CaseInsensitive);
+    QRegExp texp("^R[a-z0-9]{33}$", Qt::CaseInsensitive);
 
     return  zcexp.exactMatch(addr)  || texp.exactMatch(addr) || 
             ztsexp.exactMatch(addr) || zsexp.exactMatch(addr);

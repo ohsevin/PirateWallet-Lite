@@ -164,7 +164,7 @@ public:
             return 0;            
         } 
 
-        QCoreApplication::setOrganizationName("piratewallet-org");
+        QCoreApplication::setOrganizationName("PirateChain");
         QCoreApplication::setApplicationName("piratewallet");
 
         QString locale = QLocale::system().name();

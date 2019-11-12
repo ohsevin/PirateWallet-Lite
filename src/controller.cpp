@@ -160,11 +160,13 @@ void Controller::getInfoThenRefresh(bool force) {
         int curBlock  = reply["latest_block_height"].get<json::number_integer_t>();
         bool doUpdate = force || (model->getLatestBlock() != curBlock);
         model->setLatestBlock(curBlock);
+        ui->blockHeight->setText(QString::number(curBlock));
 
         // Connected, so display checkmark.
         auto tooltip = Settings::getInstance()->getSettings().server + "\n" + QString::fromStdString(reply.dump());
         QIcon i(":/icons/res/connected.gif");
         main->statusLabel->setText(chainName + "(" + QString::number(curBlock) + ")");
+        main->statusLabel->setText(" ARRR/USD=$" + QString::number( (double) Settings::getInstance()->getZECPrice() ));
         main->statusLabel->setToolTip(tooltip);
         main->statusIcon->setPixmap(i.pixmap(16, 16));
         main->statusIcon->setToolTip(tooltip);
@@ -172,6 +174,8 @@ void Controller::getInfoThenRefresh(bool force) {
         //int version = reply["version"].get<json::string_t>();
         int version = 1;
         Settings::getInstance()->setZcashdVersion(version);
+        ui->Version->setText(QString::fromStdString(reply["version"].get<json::string_t>())); 
+        ui->Vendor->setText(QString::fromStdString(reply["vendor"].get<json::string_t>()));
 
         // See if recurring payments needs anything
         Recurring::getInstance()->processPending(main);
