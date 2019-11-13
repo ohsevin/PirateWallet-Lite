@@ -48,7 +48,7 @@ public:
     void fetchBalance(const std::function<void(json)>& cb);
 
     void createNewZaddr(bool sapling, const std::function<void(json)>& cb);
-    void createNewTaddr(const std::function<void(json)>& cb);
+    // void createNewTaddr(const std::function<void(json)>& cb);
 
     void fetchPrivKey(QString addr, const std::function<void(json)>& cb);
     void fetchAllPrivKeys(const std::function<void(json)>);

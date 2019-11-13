@@ -972,21 +972,21 @@ std::function<void(bool)> MainWindow::addZAddrsToComboList(bool sapling) {
 }
 
 void MainWindow::setupReceiveTab() {
-    auto addNewTAddr = [=] () {
-        rpc->createNewTaddr([=] (json reply) {
-            QString addr = QString::fromStdString(reply.get<json::array_t>()[0]);
-            // Make sure the RPC class reloads the t-addrs for future use
-            rpc->refreshAddresses();
+    // auto addNewTAddr = [=] () {
+    //     rpc->createNewTaddr([=] (json reply) {
+    //         QString addr = QString::fromStdString(reply.get<json::array_t>()[0]);
+    //         // Make sure the RPC class reloads the t-addrs for future use
+    //         rpc->refreshAddresses();
 
-            // Just double make sure the t-address is still checked
-            if (ui->rdioTAddr->isChecked()) {
-                ui->listReceiveAddresses->insertItem(0, addr);
-                ui->listReceiveAddresses->setCurrentIndex(0);
+    //         // Just double make sure the t-address is still checked
+    //         if (ui->rdioTAddr->isChecked()) {
+    //             ui->listReceiveAddresses->insertItem(0, addr);
+    //             ui->listReceiveAddresses->setCurrentIndex(0);
 
-                ui->statusBar->showMessage(tr("Created new t-Addr"), 10 * 1000);
-            }
-        });
-    };
+    //             ui->statusBar->showMessage(tr("Created new t-Addr"), 10 * 1000);
+    //         }
+    //     });
+    // };
 
     // Connect t-addr radio button
     QObject::connect(ui->rdioTAddr, &QRadioButton::toggled, [=] (bool checked) { 
@@ -1052,7 +1052,7 @@ void MainWindow::setupReceiveTab() {
         if (ui->rdioZSAddr->isChecked()) {
             addNewZaddr(true);
         } else if (ui->rdioTAddr->isChecked()) {
-            addNewTAddr();
+            ui->statusBar->showMessage(tr("Transparent addresses not supported!"), 10 * 1000);
         }
     });
 

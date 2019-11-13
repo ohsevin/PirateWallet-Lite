@@ -67,11 +67,11 @@ public:
             zrpc->createNewZaddr(sapling, cb);
         }, [=](){});
     }
-    void createNewTaddr(const std::function<void(json)>& cb) { 
-        unlockIfEncrypted([=] () {
-            zrpc->createNewTaddr(cb); 
-        }, [=](){});
-    }
+    // void createNewTaddr(const std::function<void(json)>& cb) { 
+    //     unlockIfEncrypted([=] () {
+    //         zrpc->createNewTaddr(cb); 
+    //     }, [=](){});
+    // }
 
     void fetchPrivKey(QString addr, const std::function<void(json)>& cb) { 
         unlockIfEncrypted([=] () {

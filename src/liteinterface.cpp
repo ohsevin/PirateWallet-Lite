@@ -42,12 +42,12 @@ void LiteInterface::createNewZaddr(bool, const std::function<void(json)>& cb) {
     conn->doRPCWithDefaultErrorHandling("new", "z", cb);
 }
 
-void LiteInterface::createNewTaddr(const std::function<void(json)>& cb) {
-   if (conn == nullptr)
-       return;
+// void LiteInterface::createNewTaddr(const std::function<void(json)>& cb) {
+//    if (conn == nullptr)
+//        return;
 
-   conn->doRPCWithDefaultErrorHandling("new", "R", cb);
-}
+//    conn->doRPCWithDefaultErrorHandling("new", "R", cb);
+// }
 
 void LiteInterface::fetchPrivKey(QString addr, const std::function<void(json)>& cb) {
     if (conn == nullptr)
