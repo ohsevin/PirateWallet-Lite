@@ -88,7 +88,7 @@ cat src/scripts/control | sed "s/RELEASE_VERSION/$APP_VERSION/g" > $debdir/DEBIA
 cp piratewallet-lite                   $debdir/usr/local/bin/
 
 mkdir -p $debdir/usr/share/pixmaps/
-cp res/zecwallet-lite.xpm           $debdir/usr/share/pixmaps/
+cp res/piratewallet-lite.xpm           $debdir/usr/share/pixmaps/
 
 mkdir -p $debdir/usr/share/applications
 cp src/scripts/desktopentry    $debdir/usr/share/applications/piratewallet-lite.desktop
