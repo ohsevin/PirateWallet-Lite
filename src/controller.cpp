@@ -121,11 +121,9 @@ void Controller::noConnection() {
 
     // Clear balances
     ui->balSheilded->setText("");
-    ui->balTransparent->setText("");
     ui->balTotal->setText("");
 
     ui->balSheilded->setToolTip("");
-    ui->balTransparent->setToolTip("");
     ui->balTotal->setToolTip("");
 }
 
@@ -269,7 +267,6 @@ void Controller::processUnspent(const json& reply, QMap<QString, CAmount>* balan
 };
 
 void Controller::updateUIBalances() {
-    CAmount balT = getModel()->getBalT();
     CAmount balZ = getModel()->getBalZ();
     CAmount balVerified = getModel()->getBalVerified();
 
@@ -277,18 +274,16 @@ void Controller::updateUIBalances() {
     // here because totalPending is already negative for outgoing txns.
     balZ = balZ + getModel()->getTotalPending();
 
-    CAmount balTotal     = balT + balZ;
-    CAmount balAvailable = balT + balVerified;
+    CAmount balTotal     = balZ;
+    CAmount balAvailable = balVerified;
 
     // Balances table
     ui->balSheilded   ->setText(balZ.toDecimalZECString());
     ui->balVerified   ->setText(balVerified.toDecimalZECString());
-    ui->balTransparent->setText(balT.toDecimalZECString());
     ui->balTotal      ->setText(balTotal.toDecimalZECString());
 
     ui->balSheilded   ->setToolTip(balZ.toDecimalUSDString());
     ui->balVerified   ->setToolTip(balVerified.toDecimalUSDString());
-    ui->balTransparent->setToolTip(balT.toDecimalUSDString());
     ui->balTotal      ->setToolTip(balTotal.toDecimalUSDString());
 
     // Send tab
@@ -302,19 +297,17 @@ void Controller::refreshBalances() {
 
     // 1. Get the Balances
     zrpc->fetchBalance([=] (json reply) {    
-        CAmount balT        = CAmount::fromqint64(reply["tbalance"].get<json::number_unsigned_t>());
         CAmount balZ        = CAmount::fromqint64(reply["zbalance"].get<json::number_unsigned_t>());
         CAmount balVerified = CAmount::fromqint64(reply["verified_zbalance"].get<json::number_unsigned_t>());
         
-        model->setBalT(balT);
         model->setBalZ(balZ);
         model->setBalVerified(balVerified);
 
         // This is for the websockets
-        AppDataModel::getInstance()->setBalances(balT, balZ);
+        AppDataModel::getInstance()->setBalances(balZ);
         
         // This is for the datamodel
-        CAmount balAvailable = balT + balVerified;
+        CAmount balAvailable = balVerified;
         model->setAvailableBalance(balAvailable);
 
         updateUIBalances();

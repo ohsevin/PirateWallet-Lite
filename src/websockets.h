@@ -152,20 +152,17 @@ public:
         return instance;
     }
 
-    CAmount getTBalance()     { return balTransparent;  }
     CAmount getZBalance()     { return balShielded; }
     CAmount getTotalBalance() { return balTotal; }
 
-    void    setBalances(CAmount transparent, CAmount shielded) {
-        balTransparent = transparent;
+    void    setBalances(CAmount shielded) {
         balShielded = shielded;
-        balTotal = balTransparent + balShielded;
+        balTotal = balShielded;
     }
 
 private:
     AppDataModel() = default;   // Private, for singleton
 
-    CAmount balTransparent;
     CAmount balShielded;
     CAmount balTotal;
 
