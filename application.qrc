@@ -10,7 +10,7 @@
     </qresource>
     <qresource prefix="/img">
         <file>res/piratedlogo.svg</file>
-        <file>res/logobig.gif</file>
+        <file>res/logo.svg</file>
     </qresource>
     <qresource prefix="/translations">
         <file>res/arrr_qt_wallet_es.qm</file>

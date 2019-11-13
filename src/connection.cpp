@@ -20,7 +20,7 @@ ConnectionLoader::ConnectionLoader(MainWindow* main, Controller* rpc) {
     d = new QDialog(main);
     connD = new Ui_ConnectionDialog();
     connD->setupUi(d);
-    QPixmap logo(":/img/res/logobig.gif");
+    QPixmap logo(":/img/res/logo.svg");
     connD->topIcon->setBasePixmap(logo.scaled(256, 256, Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
     isSyncing = new QAtomicInteger<bool>();

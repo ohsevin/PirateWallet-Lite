@@ -646,7 +646,7 @@ void MainWindow::sendButton() {
         auto d = new QDialog(this);
         auto connD = new Ui_ConnectionDialog();
         connD->setupUi(d);
-        QPixmap logo(":/img/res/logobig.gif");
+        QPixmap logo(":/img/res/logo.svg");
         connD->topIcon->setBasePixmap(logo.scaled(256, 256, Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
         connD->status->setText(tr("Please wait..."));
