@@ -7,7 +7,7 @@
 class ViewAllAddressesModel : public QAbstractTableModel {
 
 public:
-    ViewAllAddressesModel(QTableView* parent, QList<QString> taddrs, Controller* rpc);
+    ViewAllAddressesModel(QTableView* parent, Controller* rpc);
     ~ViewAllAddressesModel() = default;
 
     int      rowCount(const QModelIndex &parent) const;

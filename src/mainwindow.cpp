@@ -814,11 +814,11 @@ void MainWindow::setupBalancesTab() {
         });
 
 
-        if (Settings::isTAddress(addr)) {
-            menu.addAction(tr("View on block explorer"), [=] () {
-                Settings::openAddressInExplorer(addr);
-            });
-        }
+        // if (Settings::isTAddress(addr)) {
+        //     menu.addAction(tr("View on block explorer"), [=] () {
+        //         Settings::openAddressInExplorer(addr);
+        //     });
+        // }
 
         menu.exec(ui->balancesTable->viewport()->mapToGlobal(pos));            
     });
@@ -1013,7 +1013,7 @@ void MainWindow::setupReceiveTab() {
         Settings::saveRestoreTableHeader(viewaddrs.tblAddresses, &d, "viewalladdressestable");
         viewaddrs.tblAddresses->horizontalHeader()->setStretchLastSection(true);
 
-        ViewAllAddressesModel model(viewaddrs.tblAddresses, getRPC()->getModel()->getAllTAddresses(), getRPC());
+        ViewAllAddressesModel model(viewaddrs.tblAddresses, getRPC());
         viewaddrs.tblAddresses->setModel(&model);
 
         QObject::connect(viewaddrs.btnExportAll, &QPushButton::clicked,  this, &MainWindow::exportAllKeys);
@@ -1166,60 +1166,60 @@ void MainWindow::updateTAddrCombo(bool checked) {
         QSet<QString> addrs;
 
         // 1. Add all t addresses that have a balance
-        std::for_each(utxos.begin(), utxos.end(), [=, &addrs](auto& utxo) {
-            auto addr = utxo.address;
-            if (Settings::isTAddress(addr) && !addrs.contains(addr)) {
-                auto bal = rpc->getModel()->getAllBalances().value(addr);
-                ui->listReceiveAddresses->addItem(addr, bal);
+        // std::for_each(utxos.begin(), utxos.end(), [=, &addrs](auto& utxo) {
+        //     auto addr = utxo.address;
+        //     if (Settings::isTAddress(addr) && !addrs.contains(addr)) {
+        //         auto bal = rpc->getModel()->getAllBalances().value(addr);
+        //         ui->listReceiveAddresses->addItem(addr, bal);
 
-                addrs.insert(addr);
-            }
-        });
+        //         addrs.insert(addr);
+        //     }
+        // });
         
-        // 2. Add all t addresses that have a label
-        auto allTaddrs = this->rpc->getModel()->getAllTAddresses();
-        QSet<QString> labels;
-        for (auto p : AddressBook::getInstance()->getAllAddressLabels()) {
-            labels.insert(p.second);
-        }
-        std::for_each(allTaddrs.begin(), allTaddrs.end(), [=, &addrs] (auto& taddr) {
-            // If the address is in the address book, add it. 
-            if (labels.contains(taddr) && !addrs.contains(taddr)) {
-                addrs.insert(taddr);
-                ui->listReceiveAddresses->addItem(taddr, CAmount::fromqint64(0));
-            }
-        });
+        // 2. Add all t addresses that have a label - unnecessary for Pirate
+        // auto allTaddrs = this->rpc->getModel()->getAllTAddresses();
+        // QSet<QString> labels;
+        // for (auto p : AddressBook::getInstance()->getAllAddressLabels()) {
+        //     labels.insert(p.second);
+        // }
+        // std::for_each(allTaddrs.begin(), allTaddrs.end(), [=, &addrs] (auto& taddr) {
+        //     // If the address is in the address book, add it. 
+        //     if (labels.contains(taddr) && !addrs.contains(taddr)) {
+        //         addrs.insert(taddr);
+        //         ui->listReceiveAddresses->addItem(taddr, CAmount::fromqint64(0));
+        //     }
+        // });
 
         // 3. Add all t-addresses. We won't add more than 20 total t-addresses,
         // since it will overwhelm the dropdown
-        for (int i=0; addrs.size() < 20 && i < allTaddrs.size(); i++) {
-            auto addr = allTaddrs.at(i);
-            if (!addrs.contains(addr))  {
-                addrs.insert(addr);
-                // Balance is zero since it has not been previously added
-                ui->listReceiveAddresses->addItem(addr, CAmount::fromqint64(0));
-            }
-        }
+        // for (int i=0; addrs.size() < 20 && i < allTaddrs.size(); i++) {
+        //     auto addr = allTaddrs.at(i);
+        //     if (!addrs.contains(addr))  {
+        //         addrs.insert(addr);
+        //         // Balance is zero since it has not been previously added
+        //         ui->listReceiveAddresses->addItem(addr, CAmount::fromqint64(0));
+        //     }
+        // }
 
         // 4. Add the previously selected t-address
-        if (!currentTaddr.isEmpty() && Settings::isTAddress(currentTaddr)) {
-            // Make sure the current taddr is in the list
-            if (!addrs.contains(currentTaddr)) {
-                auto bal = rpc->getModel()->getAllBalances().value(currentTaddr);
-                ui->listReceiveAddresses->addItem(currentTaddr, bal);
-            }
-            ui->listReceiveAddresses->setCurrentText(currentTaddr);
-        }
+        // if (!currentTaddr.isEmpty() && Settings::isTAddress(currentTaddr)) {
+        //     // Make sure the current taddr is in the list
+        //     if (!addrs.contains(currentTaddr)) {
+        //         auto bal = rpc->getModel()->getAllBalances().value(currentTaddr);
+        //         ui->listReceiveAddresses->addItem(currentTaddr, bal);
+        //     }
+        //     ui->listReceiveAddresses->setCurrentText(currentTaddr);
+        // }
 
         // 5. Add a last, disabled item if there are remaining items
-        if (allTaddrs.size() > addrs.size()) {
-            auto num = QString::number(allTaddrs.size() - addrs.size());
-            ui->listReceiveAddresses->addItem("-- " + num + " more --", CAmount::fromqint64(0));
+        // if (allTaddrs.size() > addrs.size()) {
+        //     auto num = QString::number(allTaddrs.size() - addrs.size());
+        //     ui->listReceiveAddresses->addItem("-- " + num + " more --", CAmount::fromqint64(0));
 
-            QStandardItemModel* model = qobject_cast<QStandardItemModel*>(ui->listReceiveAddresses->model());
-            QStandardItem* item =  model->findItems("--", Qt::MatchStartsWith)[0];
-            item->setFlags(item->flags() & ~Qt::ItemIsEnabled);
-        }
+        //     QStandardItemModel* model = qobject_cast<QStandardItemModel*>(ui->listReceiveAddresses->model());
+        //     QStandardItem* item =  model->findItems("--", Qt::MatchStartsWith)[0];
+        //     item->setFlags(item->flags() & ~Qt::ItemIsEnabled);
+        // }
     }
 };
 

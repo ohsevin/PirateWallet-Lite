@@ -2,10 +2,9 @@
 #include "camount.h"
 #include "settings.h"
 
-ViewAllAddressesModel::ViewAllAddressesModel(QTableView *parent, QList<QString> taddrs, Controller* rpc)
+ViewAllAddressesModel::ViewAllAddressesModel(QTableView *parent, Controller* rpc)
      : QAbstractTableModel(parent) {
     headers << tr("Address") << tr("Balance (%1)").arg(Settings::getTokenName());
-    addresses = taddrs;
     this->rpc = rpc;
 }
 

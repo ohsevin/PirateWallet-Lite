@@ -8,7 +8,7 @@ BalancesTableModel::BalancesTableModel(QObject *parent)
     : QAbstractTableModel(parent) {    
 }
 
-void BalancesTableModel::setNewData(const QList<QString> zaddrs, const QList<QString> taddrs,
+void BalancesTableModel::setNewData(const QList<QString> zaddrs,
     const QMap<QString, CAmount> balances, const QList<UnspentOutput> outputs)
 {    
     loading = false;
@@ -32,12 +32,6 @@ void BalancesTableModel::setNewData(const QList<QString> zaddrs, const QList<QSt
     for (auto zaddr: zaddrs) {
         if (!balances.contains(zaddr)) {
             modeldata->push_back(std::make_tuple(zaddr, CAmount::fromqint64(0)));
-        }
-    }
-
-    for (auto taddr: taddrs) {
-        if (!balances.contains(taddr)) {
-            modeldata->push_back(std::make_tuple(taddr, CAmount::fromqint64(0)));
         }
     }
 

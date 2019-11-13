@@ -11,7 +11,7 @@ public:
     BalancesTableModel(QObject* parent);
     ~BalancesTableModel();
 
-    void setNewData(const QList<QString> zaddrs, const QList<QString> taddrs, const QMap<QString, CAmount> balances, const QList<UnspentOutput> outputs);
+    void setNewData(const QList<QString> zaddrs, const QMap<QString, CAmount> balances, const QList<UnspentOutput> outputs);
 
     int rowCount(const QModelIndex &parent) const;
     int columnCount(const QModelIndex &parent) const;

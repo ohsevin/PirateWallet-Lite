@@ -19,7 +19,6 @@ struct UnspentOutput {
 class DataModel {
 public:
     void replaceZaddresses(QList<QString>* newZ);
-    void replaceTaddresses(QList<QString>* newZ);
     void replaceBalances(QMap<QString, CAmount>* newBalances);
     void replaceUTXOs(QList<UnspentOutput>* utxos);
 
@@ -32,7 +31,6 @@ public:
     QPair<bool, bool> getEncryptionStatus() { return qMakePair(this->isEncrypted, this->isLocked); }
 
     const QList<QString>             getAllZAddresses()     { QReadLocker locker(lock); return *zaddresses; }
-    const QList<QString>             getAllTAddresses()     { QReadLocker locker(lock); return *taddresses; }
     const QList<UnspentOutput>       getUTXOs()             { QReadLocker locker(lock); return *utxos; }
     const QMap<QString, CAmount>     getAllBalances()       { QReadLocker locker(lock); return *balances; }
     const QMap<QString, bool>        getUsedAddresses()     { QReadLocker locker(lock); return *usedAddresses; }
@@ -64,12 +62,10 @@ private:
     QMap<QString, CAmount>* balances        = nullptr;
     QMap<QString, bool>*    usedAddresses   = nullptr;
     QList<QString>*         zaddresses      = nullptr;
-    QList<QString>*         taddresses      = nullptr;
 
     CAmount                 availableBalance;
     CAmount                 totalPending;   // Outgoing pending is -ve
 
-    CAmount                 balT;
     CAmount                 balZ;
     CAmount                 balVerified;
 

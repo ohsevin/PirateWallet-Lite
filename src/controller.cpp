@@ -228,15 +228,6 @@ void Controller::refreshAddresses() {
 
         model->replaceZaddresses(newzaddresses);
 
-        // auto taddrs = reply["t_addresses"].get<json::array_t>();
-        // for (auto& it : taddrs) {   
-        //     auto addr = QString::fromStdString(it.get<json::string_t>());
-        //     if (Settings::isTAddress(addr))
-        //         newtaddresses->push_back(addr);
-        // }
-
-        // model->replaceTaddresses(newtaddresses);
-
         // Refresh the sent and received txs from all these z-addresses
         refreshTransactions();
     });
@@ -248,7 +239,7 @@ void Controller::updateUI(bool anyUnconfirmed) {
     ui->unconfirmedWarning->setVisible(anyUnconfirmed);
 
     // Update balances model data, which will update the table too
-    balancesTableModel->setNewData(model->getAllZAddresses(), model->getAllTAddresses(), model->getAllBalances(), model->getUTXOs());
+    balancesTableModel->setNewData(model->getAllZAddresses(), model->getAllBalances(), model->getUTXOs());
 };
 
 // Function to process reply of the listunspent and z_listunspent API calls, used below.

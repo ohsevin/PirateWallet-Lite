@@ -10,7 +10,6 @@ DataModel::DataModel() {
     balances = new QMap<QString, CAmount>();
     usedAddresses = new QMap<QString, bool>();
     zaddresses = new QList<QString>();
-    taddresses = new QList<QString>();
 }
 
 DataModel::~DataModel() {
@@ -20,7 +19,6 @@ DataModel::~DataModel() {
     delete balances;
     delete usedAddresses;
     delete zaddresses;
-    delete taddresses;
 }
 
 void DataModel::setLatestBlock(int blockHeight) {
@@ -34,15 +32,6 @@ void DataModel::replaceZaddresses(QList<QString>* newZ) {
 
     delete zaddresses;
     zaddresses = newZ;
-}
-
-
-void DataModel::replaceTaddresses(QList<QString>* newT) {
-    QWriteLocker locker(lock);
-    Q_ASSERT(newT);
-
-    delete taddresses;
-    taddresses = newT;
 }
 
 void DataModel::replaceBalances(QMap<QString, CAmount>* newBalances) {
