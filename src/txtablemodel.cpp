@@ -170,7 +170,7 @@ QVariant TxTableModel::data(const QModelIndex &index, int role) const {
         
         // If the memo is a Payment URI, then show a payment request icon
         if (dat.items.length() == 1 && dat.items[0].memo.startsWith("pirate:")) {
-            QIcon icon(":/icons/res/paymentreq.gif");
+            QIcon icon(":/icons/res/paymentreq.svg");
             return QVariant(icon.pixmap(16, 16));
         } else if (hasMemo) {
             // Return the info pixmap to indicate memo

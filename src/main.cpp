@@ -175,7 +175,7 @@ public:
         translator.load(QString(":/translations/res/arrr_qt_wallet_") + locale);
         a.installTranslator(&translator);
 
-        QIcon icon(":/icons/res/icon.ico");
+        QIcon icon(":/icons/res/logo.ico");
         QApplication::setWindowIcon(icon);
 
         #ifdef Q_OS_LINUX

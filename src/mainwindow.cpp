@@ -349,7 +349,7 @@ void MainWindow::removeWalletEncryption() {
 void MainWindow::setupStatusBar() {
     // Status Bar
     loadingLabel = new QLabel();
-    loadingMovie = new QMovie(":/icons/res/loading.gif");
+    loadingMovie = new QMovie(":/icons/res/loading.svg");
     loadingMovie->setScaledSize(QSize(32, 16));
     loadingMovie->start();
     loadingLabel->setAttribute(Qt::WA_NoSystemBackground);
@@ -825,7 +825,7 @@ void MainWindow::setupBalancesTab() {
 }
 
 void MainWindow::setupZcashdTab() {    
-    ui->zcashdlogo->setBasePixmap(QPixmap(":/img/res/zcashdlogo.gif"));
+    ui->zcashdlogo->setBasePixmap(QPixmap(":/img/res/piratedlogo.svg"));
 }
 
 void MainWindow::setupTransactionsTab() {

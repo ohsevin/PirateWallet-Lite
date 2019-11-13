@@ -6,7 +6,7 @@
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
 		<MediaTemplate EmbedCab="yes"/>
 
-        <Icon Id="pirateqtwalleticon.exe" SourceFile="res/icon.ico"/>
+        <Icon Id="pirateqtwalleticon.exe" SourceFile="res/logo.ico"/>
         <Property Id="ARPPRODUCTICON" Value="pirateqtwalleticon.exe" />
 
 		<Feature Id="ProductFeature" Title="pirate-qt-wallet" Level="1">
