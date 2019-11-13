@@ -755,7 +755,6 @@ void AppDataServer::processGetInfo(QJsonObject jobj, MainWindow* mainWindow, std
         {"version", 1.0},
         {"command", "getInfo"},
         {"saplingAddress", mainWindow->getRPC()->getDefaultSaplingAddress()},
-        // {"tAddress", mainWindow->getRPC()->getDefaultTAddress()},
         {"balance", AppDataModel::getInstance()->getTotalBalance().toDecimalDouble()},
         {"maxspendable", maxSpendable.toDecimalDouble()},
         {"maxzspendable", maxZSpendable.toDecimalDouble()},

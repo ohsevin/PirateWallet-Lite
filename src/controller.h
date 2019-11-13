@@ -104,7 +104,7 @@ public:
     // void importTPrivKey(QString addr, bool rescan, const std::function<void(json)>& cb) { zrpc->importTPrivKey(addr, rescan, cb); }
 
     QString getDefaultSaplingAddress();
-    QString getDefaultTAddress();   
+    // QString getDefaultTAddress();
     
 private:
     void refreshBalances();

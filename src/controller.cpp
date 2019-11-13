@@ -217,7 +217,7 @@ void Controller::refreshAddresses() {
         return noConnection();
     
     auto newzaddresses = new QList<QString>();
-    auto newtaddresses = new QList<QString>();
+    //auto newtaddresses = new QList<QString>();
 
     zrpc->fetchAddresses([=] (json reply) {
         auto zaddrs = reply["z_addresses"].get<json::array_t>();
@@ -228,14 +228,14 @@ void Controller::refreshAddresses() {
 
         model->replaceZaddresses(newzaddresses);
 
-        auto taddrs = reply["t_addresses"].get<json::array_t>();
-        for (auto& it : taddrs) {   
-            auto addr = QString::fromStdString(it.get<json::string_t>());
-            if (Settings::isTAddress(addr))
-                newtaddresses->push_back(addr);
-        }
+        // auto taddrs = reply["t_addresses"].get<json::array_t>();
+        // for (auto& it : taddrs) {   
+        //     auto addr = QString::fromStdString(it.get<json::string_t>());
+        //     if (Settings::isTAddress(addr))
+        //         newtaddresses->push_back(addr);
+        // }
 
-        model->replaceTaddresses(newtaddresses);
+        // model->replaceTaddresses(newtaddresses);
 
         // Refresh the sent and received txs from all these z-addresses
         refreshTransactions();
