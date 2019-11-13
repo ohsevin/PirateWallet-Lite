@@ -11,4 +11,4 @@ crate-type = ["staticlib"]
 [dependencies]
 libc = "0.2.58"
 lazy_static = "1.4.0"
-arrrwalletlitelib = { git = "https://github.com/MrMLynch/pirate-light-cli", rev = "e9ac1a660836bcbfa7aa14e4d95e78f03986fb0b" }
+arrrwalletlitelib = { git = "https://github.com/MrMLynch/pirate-light-cli", rev = "0ccaaf07e76097664367cb040474fadb3397abf4" }

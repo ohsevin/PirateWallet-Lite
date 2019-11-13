@@ -715,9 +715,9 @@ QString Controller::getDefaultSaplingAddress() {
     return QString();
 }
 
-QString Controller::getDefaultTAddress() {
-    if (model->getAllTAddresses().length() > 0)
-        return model->getAllTAddresses().at(0);
-    else 
-        return QString();
-}
+// QString Controller::getDefaultTAddress() {
+//     if (model->getAllTAddresses().length() > 0)
+//         return model->getAllTAddresses().at(0);
+//     else 
+//         return QString();
+// }
