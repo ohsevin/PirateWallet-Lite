@@ -944,7 +944,7 @@
       </widget>
       <widget class="QWidget" name="tab_5">
        <attribute name="title">
-        <string>pirated</string>
+        <string>About</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_7">
         <item>
@@ -974,7 +974,7 @@
              <item row="5" column="0" colspan="3">
               <widget class="QLabel" name="label_14">
                <property name="text">
-                <string>You are currently not mining</string>
+                <string>Mining not supported in Lite Wallet!</string>
                </property>
               </widget>
              </item>
@@ -992,7 +992,7 @@
               </spacer>
              </item>
              <item row="2" column="2">
-              <widget class="QLabel" name="numconnections">
+              <widget class="QLabel" name="vendor">
                <property name="text">
                 <string>Loading...</string>
                </property>
@@ -1006,7 +1006,7 @@
               </widget>
              </item>
              <item row="3" column="2">
-              <widget class="QLabel" name="solrate">
+              <widget class="QLabel" name="version">
                <property name="text">
                 <string>Loading...</string>
                </property>
@@ -1015,14 +1015,14 @@
              <item row="3" column="0">
               <widget class="QLabel" name="label_12">
                <property name="text">
-                <string>Network solution rate</string>
+                <string>Lightd Server Version</string>
                </property>
               </widget>
              </item>
              <item row="2" column="0">
               <widget class="QLabel" name="label_8">
                <property name="text">
-                <string>Connections</string>
+                <string>Version</string>
                </property>
               </widget>
              </item>

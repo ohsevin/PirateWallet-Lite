@@ -160,12 +160,13 @@ void Controller::getInfoThenRefresh(bool force) {
         int curBlock  = reply["latest_block_height"].get<json::number_integer_t>();
         bool doUpdate = force || (model->getLatestBlock() != curBlock);
         model->setLatestBlock(curBlock);
+        ui->blockheight->setText(QString::number(curBlock));
 
         // Connected, so display checkmark.
         auto tooltip = Settings::getInstance()->getSettings().server + "\n" + QString::fromStdString(reply.dump());
         QIcon i(":/icons/res/connected.gif");
         main->statusLabel->setText(chainName + "(" + QString::number(curBlock) + ")");
-        main->statusLabel->setText(" ARRR/USD=$" + QString::number( (double) Settings::getInstance()->getZECPrice() ));
+        main->statusLabel->setText(" Current Block: " + QString::number(curBlock) + " |" + " ARRR/USD=$" + QString::number( (double) Settings::getInstance()->getZECPrice() ));
         main->statusLabel->setToolTip(tooltip);
         main->statusIcon->setPixmap(i.pixmap(16, 16));
         main->statusIcon->setToolTip(tooltip);
@@ -173,6 +174,9 @@ void Controller::getInfoThenRefresh(bool force) {
         //int version = reply["version"].get<json::string_t>();
         int version = 1;
         Settings::getInstance()->setZcashdVersion(version);
+        QString vversion = QString(APP_VERSION) % " (" % QString(__DATE__) % ")";
+        ui->version->setText(QString::fromStdString(reply["version"].get<json::string_t>())); 
+        ui->vendor->setText(vversion);
 
         // See if recurring payments needs anything
         Recurring::getInstance()->processPending(main);
