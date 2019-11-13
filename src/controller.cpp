@@ -113,7 +113,7 @@ void Controller::noConnection() {
     QMap<QString, CAmount> emptyBalances;
     QList<UnspentOutput>  emptyOutputs;
     QList<QString>        emptyAddresses;
-    balancesTableModel->setNewData(emptyAddresses, emptyAddresses, emptyBalances, emptyOutputs);
+    balancesTableModel->setNewData(emptyAddresses, emptyBalances, emptyOutputs);
 
     // Clear Transactions table.
     QList<TransactionItem> emptyTxs;
