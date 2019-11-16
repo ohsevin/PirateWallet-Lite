@@ -1,5 +1,5 @@
 PirateWallet-Lite is z-Addr first, Sapling compatible wallet lightwallet for Pirate. It has full support for all Pirate features:
-- Send + Receive fully shileded transactions
+- Send + Receive fully shielded transactions
 - Full support for incoming and outgoing memos
 - Fully encrypt your private keys, using viewkeys to sync the blockchain
 
