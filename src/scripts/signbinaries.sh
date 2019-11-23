@@ -33,7 +33,7 @@ rm -f sha256sum-v$APP_VERSION.txt
 rm -f signatures-v$APP_VERSION.tar.gz
 
 # sha256sum the binaries
-gsha256sum *$APP_VERSION* > sha256sum-v$APP_VERSION.txt
+sha256sum *$APP_VERSION* > sha256sum-v$APP_VERSION.txt
 
 for i in $( ls *piratewallet-lite-v$APP_VERSION* sha256sum-v$APP_VERSION* ); do
   echo "Signing" $i
