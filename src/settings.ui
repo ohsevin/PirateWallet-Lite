@@ -52,19 +52,20 @@
           </size>
          </property>
          <property name="text">
-          <string>Lightwalletd Server - default is: https://lightd.pirate.black:443</string>
+          <string>Lightwallet Server - default is: https://lightd.pirate.black:443</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="txtServer">
-         <property name="placeholderText">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_2"/>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QComboBox" name="cmbServer">
+           <property name="editable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
         <spacer name="verticalSpacer">

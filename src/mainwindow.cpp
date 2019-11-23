@@ -427,9 +427,12 @@ void MainWindow::setupSettingsModal() {
         // Fetch prices
         settings.chkFetchPrices->setChecked(Settings::getInstance()->getAllowFetchPrices());
         
+        // List of default servers
+        settings.cmbServer->addItem("https://lightd.pirate.black:443");
+
         // Load current values into the dialog        
         auto conf = Settings::getInstance()->getSettings();
-        settings.txtServer->setText(conf.server);
+        settings.cmbServer->setCurrentText(conf.server);
 
         // Connection tab by default
         settings.tabWidget->setCurrentIndex(0);
@@ -443,14 +446,14 @@ void MainWindow::setupSettingsModal() {
 
             // Save the server
             bool reloadConnection = false;
-            if (conf.server != settings.txtServer->currentText().trimmed()) {
+            if (conf.server != settings.cmbServer->currentText().trimmed()) {
                 reloadConnection = true;
             }
-            Settings::getInstance()->saveSettings(settings.txtServer->currentText().trimmed());
+            Settings::getInstance()->saveSettings(settings.cmbServer->currentText().trimmed());
 
             if (reloadConnection) {
                 // Save settings
-                Settings::getInstance()->saveSettings(settings.txtServer->currentText());
+                Settings::getInstance()->saveSettings(settings.cmbServer->currentText());
 
                 // Save the wallet
                 getRPC()->saveWallet([=] (auto) {
