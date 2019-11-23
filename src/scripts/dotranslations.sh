@@ -12,6 +12,6 @@ $QT_STATIC/bin/lrelease piratewallet-lite.pro
 ls res/*.qm | awk -F '[_.]' '{print $4}' | while read -r language ; do 
     if [ -f $QT_STATIC/translations/qtbase_$language.qm ]; then
         $QT_STATIC/bin/lconvert -o res/arrr_$language.qm $QT_STATIC/translations/qtbase_$language.qm res/arrr_qt_wallet_$language.qm
-        mv res/zec_$language.qm res/arrr_qt_wallet_$language.qm
+        mv res/arrr_$language.qm res/arrr_qt_wallet_$language.qm
     fi
 done

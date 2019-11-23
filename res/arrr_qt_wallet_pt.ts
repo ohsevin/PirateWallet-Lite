@@ -31,8 +31,8 @@
     <name>ConnectionDialog</name>
     <message>
         <location filename="../src/connection.ui" line="17"/>
-        <source>ZecWallet</source>
-        <translation>ZecWallet</translation>
+        <source>PirateWallet</source>
+        <translation>PirateWallet</translation>
     </message>
     <message>
         <location filename="../src/connection.ui" line="58"/>
@@ -44,8 +44,8 @@
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
-        <source>ZecWallet</source>
-        <translation>ZecWallet</translation>
+        <source>PirateWallet</source>
+        <translation>PirateWallet</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="29"/>
@@ -262,8 +262,8 @@
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="908"/>
-        <source>zcashd</source>
-        <translation>zcashd</translation>
+        <source>pirated</source>
+        <translation>pirated</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="938"/>
@@ -430,17 +430,17 @@
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="511"/>
-        <source>Tor configuration is available only when running an embedded zcashd.</source>
+        <source>Tor configuration is available only when running an embedded pirated.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="550"/>
-        <source>You&apos;re using an external zcashd. Please restart zcashd with -rescan</source>
+        <source>You&apos;re using an external pirated. Please restart pirated with -rescan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="553"/>
-        <source>You&apos;re using an external zcashd. Please restart zcashd with -reindex</source>
+        <source>You&apos;re using an external pirated. Please restart pirated with -reindex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -450,7 +450,7 @@
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="579"/>
-        <source>Connection over Tor has been enabled. To use this feature, you need to restart ZecWallet.</source>
+        <source>Connection over Tor has been enabled. To use this feature, you need to restart PirateWallet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -460,13 +460,13 @@
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="589"/>
-        <source>Connection over Tor has been disabled. To fully disconnect from Tor, you need to restart ZecWallet.</source>
+        <source>Connection over Tor has been disabled. To fully disconnect from Tor, you need to restart PirateWallet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="649"/>
-        <source>Thanks for supporting ZecWallet!</source>
-        <translation>Obrigado por apoiar a ZecWallet!</translation>
+        <source>Thanks for supporting PirateWallet!</source>
+        <translation>Obrigado por apoiar a PirateWallet!</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="651"/>
@@ -475,8 +475,8 @@
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="651"/>
-        <source> to support ZecWallet</source>
-        <translation> para apoiar ZecWallet</translation>
+        <source> to support PirateWallet</source>
+        <translation> para apoiar PirateWallet</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="730"/>
@@ -505,12 +505,12 @@
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="618"/>
-        <source>ZecWallet needs to restart to rescan/reindex. ZecWallet will now close, please restart ZecWallet to continue</source>
+        <source>PirateWallet needs to restart to rescan/reindex. PirateWallet will now close, please restart PirateWallet to continue</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="620"/>
-        <source>Restart ZecWallet</source>
+        <source>Restart PirateWallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -535,7 +535,7 @@
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="290"/>
-        <source>zcashd is not yet ready. Please wait for the UI to load</source>
+        <source>pirated is not yet ready. Please wait for the UI to load</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -565,8 +565,8 @@
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="928"/>
-        <source>The keys will be imported into your connected zcashd node</source>
-        <translation>As chaves serão importadas em seu nó zcashd conectado</translation>
+        <source>The keys will be imported into your connected pirated node</source>
+        <translation>As chaves serão importadas em seu nó pirated conectado</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="978"/>
@@ -590,8 +590,8 @@
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1002"/>
-        <source>You need to back it up from the machine zcashd is running on</source>
-        <translation>Você precisar salvar a partir da máquina que zcashd está rodando</translation>
+        <source>You need to back it up from the machine pirated is running on</source>
+        <translation>Você precisar salvar a partir da máquina que pirated está rodando</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1006"/>
@@ -844,7 +844,7 @@ não se parece com um z-Address</translation>
     </message>
     <message>
         <location filename="../src/migration.ui" line="81"/>
-        <source>If enabled, zcashd will slowly migrate your Sprout shielded funds to your Sapling address. </source>
+        <source>If enabled, pirated will slowly migrate your Sprout shielded funds to your Sapling address. </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -875,17 +875,17 @@ não se parece com um z-Address</translation>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="84"/>
-        <source>Allow connections over the internet via ZecWallet wormhole</source>
+        <source>Allow connections over the internet via PirateWallet wormhole</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="36"/>
-        <source>Scan this QRCode from your ZecWallet companion app to connect your phone</source>
+        <source>Scan this QRCode from your PirateWallet companion app to connect your phone</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="94"/>
-        <source>ZecWallet Companion App</source>
+        <source>PirateWallet Companion App</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -931,52 +931,52 @@ não se parece com um z-Address</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="52"/>
-        <source>Starting embedded zcashd</source>
-        <translation>Iniciando zcashd acoplado</translation>
+        <source>Starting embedded pirated</source>
+        <translation>Iniciando pirated acoplado</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="62"/>
-        <source>zcashd is set to run as daemon</source>
-        <translation>erro no zcashd</translation>
+        <source>pirated is set to run as daemon</source>
+        <translation>erro no pirated</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="62"/>
-        <source>Waiting for zcashd</source>
-        <translation>Esperando pelo zcashd</translation>
+        <source>Waiting for pirated</source>
+        <translation>Esperando pelo pirated</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="77"/>
-        <source>You have zcashd set to start as a daemon, which can cause problems with ZecWallet
+        <source>You have pirated set to start as a daemon, which can cause problems with PirateWallet
 
-.Please remove the following line from your zcash.conf and restart ZecWallet
+.Please remove the following line from your pirate.conf and restart PirateWallet
 daemon=1</source>
-        <translation>Você tem zcashd configurado como daemon, o que pode causar problemas com a ZecWallet
- Por favor, remova a seguinte linha do seu zcash.conf e reinicie a ZecWallet:
+        <translation>Você tem pirated configurado como daemon, o que pode causar problemas com a PirateWallet
+ Por favor, remova a seguinte linha do seu pirate.conf e reinicie a PirateWallet:
 daemon=1</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="82"/>
-        <source>Couldn&apos;t start the embedded zcashd.
+        <source>Couldn&apos;t start the embedded pirated.
 
 Please try restarting.
 
-If you previously started zcashd with custom arguments, you might need to reset zcash.conf.
+If you previously started pirated with custom arguments, you might need to reset pirate.conf.
 
-If all else fails, please run zcashd manually.</source>
-        <translation>Não foi possível iniciar o zcashd acoplado.
+If all else fails, please run pirated manually.</source>
+        <translation>Não foi possível iniciar o pirated acoplado.
 Por favor, tenta reiniciar.
-Se você iniciou zcashd anteriormente com parâmetros customizados você pode precisar resetar seu zcash.conf.
+Se você iniciou pirated anteriormente com parâmetros customizados você pode precisar resetar seu pirate.conf.
 
-Se ainda assim não der certo, por favor rode zcashd manualmente.</translation>
+Se ainda assim não der certo, por favor rode pirated manualmente.</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="93"/>
-        <source>Couldn&apos;t connect to zcashd configured in zcash.conf.
+        <source>Couldn&apos;t connect to pirated configured in pirate.conf.
 
-Not starting embedded zcashd because --no-embedded was passed</source>
-        <translation>Não foi possível conectar ao zcashd configurado em zcash.conf.
+Not starting embedded pirated because --no-embedded was passed</source>
+        <translation>Não foi possível conectar ao pirated configurado em pirate.conf.
 
-Não iniciando zcashd acoplado porque nenhum foi passado como parâmetro</translation>
+Não iniciando pirated acoplado porque nenhum foi passado como parâmetro</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="146"/>
@@ -1056,18 +1056,18 @@ Não iniciando zcashd acoplado porque nenhum foi passado como parâmetro</transl
     </message>
     <message>
         <location filename="../src/rpc.cpp" line="684"/>
-        <source>Connected to zcashd</source>
-        <translation>Conectado ao zcashd</translation>
+        <source>Connected to pirated</source>
+        <translation>Conectado ao pirated</translation>
     </message>
     <message>
         <location filename="../src/rpc.cpp" line="687"/>
-        <source>zcashd has no peer connections</source>
+        <source>pirated has no peer connections</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/rpc.cpp" line="706"/>
-        <source>There was an error connecting to zcashd. The error was</source>
-        <translation>Ocorreu um erro conectando ao zcashd. O erro foi</translation>
+        <source>There was an error connecting to pirated. The error was</source>
+        <translation>Ocorreu um erro conectando ao pirated. O erro foi</translation>
     </message>
     <message>
         <location filename="../src/rpc.cpp" line="981"/>
@@ -1128,13 +1128,13 @@ Would you like to visit the releases page?</source>
     </message>
     <message>
         <location filename="../src/rpc.cpp" line="1216"/>
-        <source>Please wait for ZecWallet to exit</source>
-        <translation>Por favor, espera ZecWallet finalizar</translation>
+        <source>Please wait for PirateWallet to exit</source>
+        <translation>Por favor, espera PirateWallet finalizar</translation>
     </message>
     <message>
         <location filename="../src/rpc.cpp" line="1217"/>
-        <source>Waiting for zcashd to exit</source>
-        <translation>Esperando zcashd finalizar</translation>
+        <source>Waiting for pirated to exit</source>
+        <translation>Esperando pirated finalizar</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="308"/>
@@ -1143,8 +1143,8 @@ Would you like to visit the releases page?</source>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="332"/>
-        <source>zcashd error</source>
-        <translation>erro no zcashd</translation>
+        <source>pirated error</source>
+        <translation>erro no pirated</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="399"/>
@@ -1157,22 +1157,22 @@ Por favor, coloque o host/porta e usuário/senha no menu Editar&gt;Preferências
     </message>
     <message>
         <location filename="../src/connection.cpp" line="411"/>
-        <source>Could not connect to zcashd configured in settings.
+        <source>Could not connect to pirated configured in settings.
 
 Please set the host/port and user/password in the Edit-&gt;Settings menu.</source>
-        <translation>Não foi possível conectar ao zcashd configurado nas preferências.
+        <translation>Não foi possível conectar ao pirated configurado nas preferências.
 
 Por favor, coloque o host/porta e usuário/senha no menu Editar&gt;Preferências.</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="472"/>
-        <source>Authentication failed. The username / password you specified was not accepted by zcashd. Try changing it in the Edit-&gt;Settings menu</source>
-        <translation>Autenticação falhou. O usuário/senha especificado não foi aceitado pelo zcashd. Tente alterá-los em Editar-&gt;Preferências</translation>
+        <source>Authentication failed. The username / password you specified was not accepted by pirated. Try changing it in the Edit-&gt;Settings menu</source>
+        <translation>Autenticação falhou. O usuário/senha especificado não foi aceitado pelo pirated. Tente alterá-los em Editar-&gt;Preferências</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="487"/>
-        <source>Your zcashd is starting up. Please wait.</source>
-        <translation>Seu zcashd está iniciando. Por favor aguarde.</translation>
+        <source>Your pirated is starting up. Please wait.</source>
+        <translation>Seu pirated está iniciando. Por favor aguarde.</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="504"/>
@@ -1333,7 +1333,7 @@ Você possui fundos não confirmados ou o saldo é muito baixo para uma migraç�
     </message>
     <message>
         <location filename="../src/websockets.cpp" line="359"/>
-        <source>Connected over the internet via ZecWallet wormhole service</source>
+        <source>Connected over the internet via PirateWallet wormhole service</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1516,7 +1516,7 @@ Você possui fundos não confirmados ou o saldo é muito baixo para uma migraç�
     </message>
     <message>
         <location filename="../src/recurringmultiple.ui" line="44"/>
-        <source>How should ZecWallet proceed?</source>
+        <source>How should PirateWallet proceed?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1662,8 +1662,8 @@ Você possui fundos não confirmados ou o saldo é muito baixo para uma migraç�
     </message>
     <message>
         <location filename="../src/settings.ui" line="33"/>
-        <source>zcashd connection</source>
-        <translation>Conexão com zcashd</translation>
+        <source>pirated connection</source>
+        <translation>Conexão com pirated</translation>
     </message>
     <message>
         <location filename="../src/settings.ui" line="62"/>
@@ -1737,7 +1737,7 @@ Você possui fundos não confirmados ou o saldo é muito baixo para uma migraç�
     </message>
     <message>
         <location filename="../src/settings.ui" line="301"/>
-        <source>Rescan the blockchain for any missing wallet transactions and to correct your wallet balance. This may take several hours. You need to restart ZecWallet for this to take effect</source>
+        <source>Rescan the blockchain for any missing wallet transactions and to correct your wallet balance. This may take several hours. You need to restart PirateWallet for this to take effect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1747,7 +1747,7 @@ Você possui fundos não confirmados ou o saldo é muito baixo para uma migraç�
     </message>
     <message>
         <location filename="../src/settings.ui" line="345"/>
-        <source>Rebuild the entire blockchain from the genesis block, by rescanning all the block files. This may take several hours to days, depending on your hardware. You need to restart ZecWallet for this to take effect</source>
+        <source>Rebuild the entire blockchain from the genesis block, by rescanning all the block files. This may take several hours to days, depending on your hardware. You need to restart PirateWallet for this to take effect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1985,7 +1985,7 @@ Você possui fundos não confirmados ou o saldo é muito baixo para uma migraç�
     </message>
     <message>
         <location filename="../src/confirm.ui" line="183"/>
-        <source>zcashd doesn&apos;t seem to have any peers. You might not be connected to the internet, so this transaction might not work.</source>
+        <source>pirated doesn&apos;t seem to have any peers. You might not be connected to the internet, so this transaction might not work.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2003,7 +2003,7 @@ Você possui fundos não confirmados ou o saldo é muito baixo para uma migraç�
     <name>createZcashConf</name>
     <message>
         <location filename="../src/createzcashconfdialog.ui" line="14"/>
-        <source>Configure zcash.conf</source>
+        <source>Configure pirate.conf</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

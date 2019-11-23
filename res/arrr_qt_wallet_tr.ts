@@ -31,12 +31,12 @@
     <name>ConnectionDialog</name>
     <message>
         <source>zec-qt-wallet</source>
-        <translation type="vanished">ZecWallet</translation>
+        <translation type="vanished">PirateWallet</translation>
     </message>
     <message>
         <location filename="../src/connection.ui" line="17"/>
-        <source>ZecWallet</source>
-        <translation>ZecWallet</translation>
+        <source>PirateWallet</source>
+        <translation>PirateWallet</translation>
     </message>
     <message>
         <location filename="../src/connection.ui" line="58"/>
@@ -48,7 +48,7 @@
     <name>MainWindow</name>
     <message>
         <source>zec-qt-wallet</source>
-        <translation type="vanished">ZecWallet</translation>
+        <translation type="vanished">PirateWallet</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="29"/>
@@ -193,8 +193,8 @@
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
-        <source>ZecWallet</source>
-        <translation>ZecWallet</translation>
+        <source>PirateWallet</source>
+        <translation>PirateWallet</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="170"/>
@@ -265,8 +265,8 @@
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="908"/>
-        <source>zcashd</source>
-        <translation>zcashd</translation>
+        <source>pirated</source>
+        <translation>pirated</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="938"/>
@@ -438,7 +438,7 @@
     </message>
     <message>
         <source>Thanks for supporting zec-qt-wallet!</source>
-        <translation type="vanished">ZecWallet&apos;i desteklediğiniz için teşekkür ederiz!</translation>
+        <translation type="vanished">PirateWallet&apos;i desteklediğiniz için teşekkür ederiz!</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="651"/>
@@ -448,7 +448,7 @@
     <message>
         <source> to support zec-qt-wallet</source>
         <translatorcomment>0.01 Bağış yap yazısının devamı</translatorcomment>
-        <translation type="vanished">ve ZecWallet&apos;i destekle</translation>
+        <translation type="vanished">ve PirateWallet&apos;i destekle</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="730"/>
@@ -482,8 +482,8 @@
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="290"/>
-        <source>zcashd is not yet ready. Please wait for the UI to load</source>
-        <translation>zcashd henüz hazır değil. Lütfen arayüzün yüklenmesini bekleyin</translation>
+        <source>pirated is not yet ready. Please wait for the UI to load</source>
+        <translation>pirated henüz hazır değil. Lütfen arayüzün yüklenmesini bekleyin</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="444"/>
@@ -497,18 +497,18 @@
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="511"/>
-        <source>Tor configuration is available only when running an embedded zcashd.</source>
-        <translation>Tor konfigürasyonu yalnızca gömülü bir zcashd çalışırken kullanılabilir.</translation>
+        <source>Tor configuration is available only when running an embedded pirated.</source>
+        <translation>Tor konfigürasyonu yalnızca gömülü bir pirated çalışırken kullanılabilir.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="550"/>
-        <source>You&apos;re using an external zcashd. Please restart zcashd with -rescan</source>
-        <translation>Harici bir zcashd kullanıyorsun. Lütfen zcashd&apos;yi -rescan ile yeniden başlat</translation>
+        <source>You&apos;re using an external pirated. Please restart pirated with -rescan</source>
+        <translation>Harici bir pirated kullanıyorsun. Lütfen pirated&apos;yi -rescan ile yeniden başlat</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="553"/>
-        <source>You&apos;re using an external zcashd. Please restart zcashd with -reindex</source>
-        <translation>Harici bir zcashd kullanıyorsun. Lütfen zcashd&apos;yi -reindex ile yeniden başlat</translation>
+        <source>You&apos;re using an external pirated. Please restart pirated with -reindex</source>
+        <translation>Harici bir pirated kullanıyorsun. Lütfen pirated&apos;yi -reindex ile yeniden başlat</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="578"/>
@@ -517,8 +517,8 @@
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="579"/>
-        <source>Connection over Tor has been enabled. To use this feature, you need to restart ZecWallet.</source>
-        <translation>Tor üzerinden bağlantı etkin. Bu özelliği kullanmak için, ZecWallet&apos;i yeniden başlatmanız gerekir.</translation>
+        <source>Connection over Tor has been enabled. To use this feature, you need to restart PirateWallet.</source>
+        <translation>Tor üzerinden bağlantı etkin. Bu özelliği kullanmak için, PirateWallet&apos;i yeniden başlatmanız gerekir.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="588"/>
@@ -527,28 +527,28 @@
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="589"/>
-        <source>Connection over Tor has been disabled. To fully disconnect from Tor, you need to restart ZecWallet.</source>
-        <translation>Tor üzerinden bağlantı devre dışı bırakıldı. Tor ile bağlantıyı tamamen kesmek için ZecWallet&apos;i yeniden başlatmanız gerekir.</translation>
+        <source>Connection over Tor has been disabled. To fully disconnect from Tor, you need to restart PirateWallet.</source>
+        <translation>Tor üzerinden bağlantı devre dışı bırakıldı. Tor ile bağlantıyı tamamen kesmek için PirateWallet&apos;i yeniden başlatmanız gerekir.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="618"/>
-        <source>ZecWallet needs to restart to rescan/reindex. ZecWallet will now close, please restart ZecWallet to continue</source>
-        <translation>ZecWallet yeniden tarama/yeniden indeksleme için yeniden başlatılması gerekiyor. ZecWallet şimdi kapanacak, lütfen devam etmek için ZecWallet&apos;i yeniden başlatın</translation>
+        <source>PirateWallet needs to restart to rescan/reindex. PirateWallet will now close, please restart PirateWallet to continue</source>
+        <translation>PirateWallet yeniden tarama/yeniden indeksleme için yeniden başlatılması gerekiyor. PirateWallet şimdi kapanacak, lütfen devam etmek için PirateWallet&apos;i yeniden başlatın</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="620"/>
-        <source>Restart ZecWallet</source>
-        <translation>ZecWallet&apos;i yeniden başlat</translation>
+        <source>Restart PirateWallet</source>
+        <translation>PirateWallet&apos;i yeniden başlat</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="649"/>
-        <source>Thanks for supporting ZecWallet!</source>
-        <translation>ZecWallet&apos;i desteklediğiniz için teşekkür ederiz!</translation>
+        <source>Thanks for supporting PirateWallet!</source>
+        <translation>PirateWallet&apos;i desteklediğiniz için teşekkür ederiz!</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="651"/>
-        <source> to support ZecWallet</source>
-        <translation> ZecWallet&apos;i desteklemek için</translation>
+        <source> to support PirateWallet</source>
+        <translation> PirateWallet&apos;i desteklemek için</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="667"/>
@@ -582,8 +582,8 @@
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="928"/>
-        <source>The keys will be imported into your connected zcashd node</source>
-        <translatorcomment>Anahtarlar bağlı zcashd düğümünüze aktarılacak</translatorcomment>
+        <source>The keys will be imported into your connected pirated node</source>
+        <translatorcomment>Anahtarlar bağlı pirated düğümünüze aktarılacak</translatorcomment>
         <translation>YOUR_TRANSLATION_HERE</translation>
     </message>
     <message>
@@ -608,8 +608,8 @@
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1002"/>
-        <source>You need to back it up from the machine zcashd is running on</source>
-        <translation>zcashd&apos;nin çalıştığı makineden yedeklemeniz gerekiyor</translation>
+        <source>You need to back it up from the machine pirated is running on</source>
+        <translation>pirated&apos;nin çalıştığı makineden yedeklemeniz gerekiyor</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1006"/>
@@ -862,8 +862,8 @@ z-adres&apos;i gibi görünmüyor</translation>
     </message>
     <message>
         <location filename="../src/migration.ui" line="81"/>
-        <source>If enabled, zcashd will slowly migrate your Sprout shielded funds to your Sapling address. </source>
-        <translation>Etkinleştirilirse, zcashd Sprout korumalı fonlarınızı yavaşça Sapling adresinize taşıyacaktır. </translation>
+        <source>If enabled, pirated will slowly migrate your Sprout shielded funds to your Sapling address. </source>
+        <translation>Etkinleştirilirse, pirated Sprout korumalı fonlarınızı yavaşça Sapling adresinize taşıyacaktır. </translation>
     </message>
 </context>
 <context>
@@ -883,8 +883,8 @@ z-adres&apos;i gibi görünmüyor</translation>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="36"/>
-        <source>Scan this QRCode from your ZecWallet companion app to connect your phone</source>
-        <translation>Telefonunuzu bağlamak için bu QR Kodu&apos;nu ZecWallet dostu uygulamadan tarayın</translation>
+        <source>Scan this QRCode from your PirateWallet companion app to connect your phone</source>
+        <translation>Telefonunuzu bağlamak için bu QR Kodu&apos;nu PirateWallet dostu uygulamadan tarayın</translation>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="43"/>
@@ -898,13 +898,13 @@ z-adres&apos;i gibi görünmüyor</translation>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="84"/>
-        <source>Allow connections over the internet via ZecWallet wormhole</source>
-        <translation>ZecWallet solucan deliği aracılığıyla internet üzerinden bağlantıya izin ver</translation>
+        <source>Allow connections over the internet via PirateWallet wormhole</source>
+        <translation>PirateWallet solucan deliği aracılığıyla internet üzerinden bağlantıya izin ver</translation>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="94"/>
-        <source>ZecWallet Companion App</source>
-        <translation>ZecWallet Dostu Uygulama</translation>
+        <source>PirateWallet Companion App</source>
+        <translation>PirateWallet Dostu Uygulama</translation>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="106"/>
@@ -949,54 +949,54 @@ z-adres&apos;i gibi görünmüyor</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="52"/>
-        <source>Starting embedded zcashd</source>
-        <translation>Gömülü zcashd başlatılıyor</translation>
+        <source>Starting embedded pirated</source>
+        <translation>Gömülü pirated başlatılıyor</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="62"/>
-        <source>zcashd is set to run as daemon</source>
-        <translation>zcashd daemon olarak çalışacak şekilde ayarlandı</translation>
+        <source>pirated is set to run as daemon</source>
+        <translation>pirated daemon olarak çalışacak şekilde ayarlandı</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="62"/>
-        <source>Waiting for zcashd</source>
-        <translation>zcashd bekleniyor</translation>
+        <source>Waiting for pirated</source>
+        <translation>pirated bekleniyor</translation>
     </message>
     <message>
-        <source>You have zcashd set to start as a daemon, which can cause problems with zec-qt-wallet
+        <source>You have pirated set to start as a daemon, which can cause problems with zec-qt-wallet
 
-.Please remove the following line from your zcash.conf and restart zec-qt-wallet
+.Please remove the following line from your pirate.conf and restart zec-qt-wallet
 daemon=1</source>
-        <translation type="vanished">zcashd, zec-qt-wallet ile sorunlara neden olan bir daemon olarak başlayacak şekilde ayarladınız.
+        <translation type="vanished">pirated, zec-qt-wallet ile sorunlara neden olan bir daemon olarak başlayacak şekilde ayarladınız.
 
-.Lütfen aşağıdaki satırı zcash.conf dosyanızdan kaldırın ve ZecWallet&apos;i yeniden başlatın
+.Lütfen aşağıdaki satırı pirate.conf dosyanızdan kaldırın ve PirateWallet&apos;i yeniden başlatın
 daemon=1</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="82"/>
-        <source>Couldn&apos;t start the embedded zcashd.
+        <source>Couldn&apos;t start the embedded pirated.
 
 Please try restarting.
 
-If you previously started zcashd with custom arguments, you might need to reset zcash.conf.
+If you previously started pirated with custom arguments, you might need to reset pirate.conf.
 
-If all else fails, please run zcashd manually.</source>
-        <translation>Gömülü zcashd başlatılamadı.
+If all else fails, please run pirated manually.</source>
+        <translation>Gömülü pirated başlatılamadı.
 
 Lütfen yeniden başlatmayı deneyin.
 
-Daha önce zcashd&apos;yi özel argümanlarla başlattıysanız, zcash.conf dosyasını sıfırlamanız gerekebilir.
+Daha önce pirated&apos;yi özel argümanlarla başlattıysanız, pirate.conf dosyasını sıfırlamanız gerekebilir.
 
-Hepsi başarısız olursa, lütfen zcashd&apos;yi manuel olarak çalıştırın.</translation>
+Hepsi başarısız olursa, lütfen pirated&apos;yi manuel olarak çalıştırın.</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="93"/>
-        <source>Couldn&apos;t connect to zcashd configured in zcash.conf.
+        <source>Couldn&apos;t connect to pirated configured in pirate.conf.
 
-Not starting embedded zcashd because --no-embedded was passed</source>
-        <translation>zcash.conf ile yapılandırılmış zcashd&apos;ye bağlanılamadı.
+Not starting embedded pirated because --no-embedded was passed</source>
+        <translation>pirate.conf ile yapılandırılmış pirated&apos;ye bağlanılamadı.
 
---no-embedded iletildiğinden gömülü zcashd başlatılmıyor</translation>
+--no-embedded iletildiğinden gömülü pirated başlatılmıyor</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="243"/>
@@ -1015,13 +1015,13 @@ Not starting embedded zcashd because --no-embedded was passed</source>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="77"/>
-        <source>You have zcashd set to start as a daemon, which can cause problems with ZecWallet
+        <source>You have pirated set to start as a daemon, which can cause problems with PirateWallet
 
-.Please remove the following line from your zcash.conf and restart ZecWallet
+.Please remove the following line from your pirate.conf and restart PirateWallet
 daemon=1</source>
-        <translation>zcashd&apos;yi, zec-qt-wallet ile sorunlara neden olabilecek bir daemon olacak şekilde ayarladınız.
+        <translation>pirated&apos;yi, zec-qt-wallet ile sorunlara neden olabilecek bir daemon olacak şekilde ayarladınız.
 
-.Lütfen aşağıdaki satırı zcash.conf dosyanızdan kaldırın ve ZecWallet&apos;i yeniden başlatın
+.Lütfen aşağıdaki satırı pirate.conf dosyanızdan kaldırın ve PirateWallet&apos;i yeniden başlatın
 daemon=1</translation>
     </message>
     <message>
@@ -1087,18 +1087,18 @@ daemon=1</translation>
     </message>
     <message>
         <location filename="../src/rpc.cpp" line="684"/>
-        <source>Connected to zcashd</source>
-        <translation>Zcashd&apos;ye bağlanıldı</translation>
+        <source>Connected to pirated</source>
+        <translation>pirated&apos;ye bağlanıldı</translation>
     </message>
     <message>
         <location filename="../src/rpc.cpp" line="687"/>
-        <source>zcashd has no peer connections</source>
-        <translation>zcashd&apos;nin eş bağlantısı yok</translation>
+        <source>pirated has no peer connections</source>
+        <translation>pirated&apos;nin eş bağlantısı yok</translation>
     </message>
     <message>
         <location filename="../src/rpc.cpp" line="706"/>
-        <source>There was an error connecting to zcashd. The error was</source>
-        <translation>zcashd ile bağlantı kurulurken bir hata oluştu. Hata</translation>
+        <source>There was an error connecting to pirated. The error was</source>
+        <translation>pirated ile bağlantı kurulurken bir hata oluştu. Hata</translation>
     </message>
     <message>
         <location filename="../src/rpc.cpp" line="981"/>
@@ -1140,8 +1140,8 @@ Yayınlanan sürümler sayfasını ziyaret etmek ister misiniz?</translation>
     </message>
     <message>
         <location filename="../src/rpc.cpp" line="1216"/>
-        <source>Please wait for ZecWallet to exit</source>
-        <translation>Lütfen çıkmak için ZecWallet&apos;i bekleyin</translation>
+        <source>Please wait for PirateWallet to exit</source>
+        <translation>Lütfen çıkmak için PirateWallet&apos;i bekleyin</translation>
     </message>
     <message>
         <location filename="../src/recurring.cpp" line="469"/>
@@ -1203,12 +1203,12 @@ Yayınlanan sürümler sayfasını ziyaret etmek ister misiniz?</translation>
     </message>
     <message>
         <source>Please wait for zec-qt-wallet to exit</source>
-        <translation type="vanished">Lütfen çıkmak için ZecWallet&apos;i bekleyin</translation>
+        <translation type="vanished">Lütfen çıkmak için PirateWallet&apos;i bekleyin</translation>
     </message>
     <message>
         <location filename="../src/rpc.cpp" line="1217"/>
-        <source>Waiting for zcashd to exit</source>
-        <translation>Çıkmak için zcashd bekleniyor</translation>
+        <source>Waiting for pirated to exit</source>
+        <translation>Çıkmak için pirated bekleniyor</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="308"/>
@@ -1217,8 +1217,8 @@ Yayınlanan sürümler sayfasını ziyaret etmek ister misiniz?</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="332"/>
-        <source>zcashd error</source>
-        <translation>zcashd hatası</translation>
+        <source>pirated error</source>
+        <translation>pirated hatası</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="399"/>
@@ -1231,22 +1231,22 @@ Lütfen Düzenle-&gt;Ayarlar menüsünde sunucu/bağlantı noktasını ve kullan
     </message>
     <message>
         <location filename="../src/connection.cpp" line="411"/>
-        <source>Could not connect to zcashd configured in settings.
+        <source>Could not connect to pirated configured in settings.
 
 Please set the host/port and user/password in the Edit-&gt;Settings menu.</source>
-        <translation>Ayarlarda yapılandırılmış zcashd&apos;ye bağlanılamadı.
+        <translation>Ayarlarda yapılandırılmış pirated&apos;ye bağlanılamadı.
 
 Lütfen Düzenle-&gt;Ayarlar menüsünde sunucu/bağlantı noktası ve kullanıcı adı/şifreyi ayarlayın.</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="472"/>
-        <source>Authentication failed. The username / password you specified was not accepted by zcashd. Try changing it in the Edit-&gt;Settings menu</source>
-        <translation>Kimlik doğrulama başarısız oldu. Belirttiğiniz kullanıcı adı/şifre zcashd tarafından kabul edilmedi. Düzenle-&gt; Ayarlar menüsünde değiştirmeyi deneyin</translation>
+        <source>Authentication failed. The username / password you specified was not accepted by pirated. Try changing it in the Edit-&gt;Settings menu</source>
+        <translation>Kimlik doğrulama başarısız oldu. Belirttiğiniz kullanıcı adı/şifre pirated tarafından kabul edilmedi. Düzenle-&gt; Ayarlar menüsünde değiştirmeyi deneyin</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="487"/>
-        <source>Your zcashd is starting up. Please wait.</source>
-        <translation>Zcashd&apos;niz başlıyor. Lütfen bekle.</translation>
+        <source>Your pirated is starting up. Please wait.</source>
+        <translation>pirated&apos;niz başlıyor. Lütfen bekle.</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="504"/>
@@ -1407,8 +1407,8 @@ Onaylanmamış fonunuz var veya otomatik geçiş için bakiye çok düşük.</tr
     </message>
     <message>
         <location filename="../src/websockets.cpp" line="359"/>
-        <source>Connected over the internet via ZecWallet wormhole service</source>
-        <translation>ZecWallet&apos;in solucan deliği servisi aracılığıyla internet üzerinden bağlandı</translation>
+        <source>Connected over the internet via PirateWallet wormhole service</source>
+        <translation>PirateWallet&apos;in solucan deliği servisi aracılığıyla internet üzerinden bağlandı</translation>
     </message>
     <message>
         <location filename="../src/websockets.cpp" line="652"/>
@@ -1553,8 +1553,8 @@ Onaylanmamış fonunuz var veya otomatik geçiş için bakiye çok düşük.</tr
     </message>
     <message>
         <location filename="../src/recurringmultiple.ui" line="44"/>
-        <source>How should ZecWallet proceed?</source>
-        <translation>ZecWallet nasıl ilerlemeli?</translation>
+        <source>How should PirateWallet proceed?</source>
+        <translation>PirateWallet nasıl ilerlemeli?</translation>
     </message>
     <message>
         <location filename="../src/recurringmultiple.ui" line="51"/>
@@ -1699,8 +1699,8 @@ Onaylanmamış fonunuz var veya otomatik geçiş için bakiye çok düşük.</tr
     </message>
     <message>
         <location filename="../src/settings.ui" line="33"/>
-        <source>zcashd connection</source>
-        <translation>zcashd bağlantısı</translation>
+        <source>pirated connection</source>
+        <translation>pirated bağlantısı</translation>
     </message>
     <message>
         <location filename="../src/settings.ui" line="62"/>
@@ -1774,8 +1774,8 @@ Onaylanmamış fonunuz var veya otomatik geçiş için bakiye çok düşük.</tr
     </message>
     <message>
         <location filename="../src/settings.ui" line="301"/>
-        <source>Rescan the blockchain for any missing wallet transactions and to correct your wallet balance. This may take several hours. You need to restart ZecWallet for this to take effect</source>
-        <translation>Eksik cüzdan işlemleri ve cüzdan bakiyenizi düzeltmek için blok zincirini yeniden tarayın. Bu birkaç saat sürebilir. Bunun gerçekleşmesi için ZecWallet&apos;i yeniden başlatmanız gerekir</translation>
+        <source>Rescan the blockchain for any missing wallet transactions and to correct your wallet balance. This may take several hours. You need to restart PirateWallet for this to take effect</source>
+        <translation>Eksik cüzdan işlemleri ve cüzdan bakiyenizi düzeltmek için blok zincirini yeniden tarayın. Bu birkaç saat sürebilir. Bunun gerçekleşmesi için PirateWallet&apos;i yeniden başlatmanız gerekir</translation>
     </message>
     <message>
         <location filename="../src/settings.ui" line="311"/>
@@ -1784,8 +1784,8 @@ Onaylanmamış fonunuz var veya otomatik geçiş için bakiye çok düşük.</tr
     </message>
     <message>
         <location filename="../src/settings.ui" line="345"/>
-        <source>Rebuild the entire blockchain from the genesis block, by rescanning all the block files. This may take several hours to days, depending on your hardware. You need to restart ZecWallet for this to take effect</source>
-        <translation>Tüm blok dosyalarını yeniden tarayarak blok zincirini genesis bloğundan yeniden oluşturun. Bu, donanımınıza bağlı olarak birkaç saat ila günler sürebilir. Bunun gerçekleşmesi için ZecWallet’i yeniden başlatmanız gerekir</translation>
+        <source>Rebuild the entire blockchain from the genesis block, by rescanning all the block files. This may take several hours to days, depending on your hardware. You need to restart PirateWallet for this to take effect</source>
+        <translation>Tüm blok dosyalarını yeniden tarayarak blok zincirini genesis bloğundan yeniden oluşturun. Bu, donanımınıza bağlı olarak birkaç saat ila günler sürebilir. Bunun gerçekleşmesi için PirateWallet’i yeniden başlatmanız gerekir</translation>
     </message>
     <message>
         <location filename="../src/settings.ui" line="225"/>
@@ -2022,8 +2022,8 @@ Onaylanmamış fonunuz var veya otomatik geçiş için bakiye çok düşük.</tr
     </message>
     <message>
         <location filename="../src/confirm.ui" line="183"/>
-        <source>zcashd doesn&apos;t seem to have any peers. You might not be connected to the internet, so this transaction might not work.</source>
-        <translation>zcashd&apos;in düğümleri yok gibi görünüyor. İnternete bağlı olmadığınız için bu işlem çalışmayabilir.</translation>
+        <source>pirated doesn&apos;t seem to have any peers. You might not be connected to the internet, so this transaction might not work.</source>
+        <translation>pirated&apos;in düğümleri yok gibi görünüyor. İnternete bağlı olmadığınız için bu işlem çalışmayabilir.</translation>
     </message>
     <message>
         <location filename="../src/confirm.ui" line="196"/>
@@ -2040,8 +2040,8 @@ Onaylanmamış fonunuz var veya otomatik geçiş için bakiye çok düşük.</tr
     <name>createZcashConf</name>
     <message>
         <location filename="../src/createzcashconfdialog.ui" line="14"/>
-        <source>Configure zcash.conf</source>
-        <translation>zcash.conf dosyasını yapılandırma</translation>
+        <source>Configure pirate.conf</source>
+        <translation>pirate.conf dosyasını yapılandırma</translation>
     </message>
     <message>
         <location filename="../src/createzcashconfdialog.ui" line="20"/>

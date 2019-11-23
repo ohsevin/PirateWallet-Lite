@@ -31,7 +31,7 @@
     <name>ConnectionDialog</name>
     <message>
         <location filename="../src/connection.ui" line="17"/>
-        <source>ZecWallet</source>
+        <source>PirateWallet</source>
         <translation>ZEC钱包</translation>
     </message>
     <message>
@@ -44,7 +44,7 @@
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
-        <source>ZecWallet</source>
+        <source>PirateWallet</source>
         <translation>ZEC钱包</translation>
     </message>
     <message>
@@ -249,7 +249,7 @@
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="908"/>
-        <source>zcashd</source>
+        <source>pirated</source>
         <translation>节点</translation>
     </message>
     <message>
@@ -427,8 +427,8 @@
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="290"/>
-        <source>zcashd is not yet ready. Please wait for the UI to load</source>
-        <translation>zcashd尚未准备好。 请等待UI加载</translation>
+        <source>pirated is not yet ready. Please wait for the UI to load</source>
+        <translation>pirated尚未准备好。 请等待UI加载</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="444"/>
@@ -442,18 +442,18 @@
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="511"/>
-        <source>Tor configuration is available only when running an embedded zcashd.</source>
-        <translation>Tor配置仅在运行嵌入的zcashd时可用。</translation>
+        <source>Tor configuration is available only when running an embedded pirated.</source>
+        <translation>Tor配置仅在运行嵌入的pirated时可用。</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="550"/>
-        <source>You&apos;re using an external zcashd. Please restart zcashd with -rescan</source>
-        <translation>你正在使用外部zcashd。 请使用-rescan参数重新启动zcashd</translation>
+        <source>You&apos;re using an external pirated. Please restart pirated with -rescan</source>
+        <translation>你正在使用外部pirated。 请使用-rescan参数重新启动pirated</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="553"/>
-        <source>You&apos;re using an external zcashd. Please restart zcashd with -reindex</source>
-        <translation>你正在使用外部zcashd。 请使用-reindex重新启动zcashd</translation>
+        <source>You&apos;re using an external pirated. Please restart pirated with -reindex</source>
+        <translation>你正在使用外部pirated。 请使用-reindex重新启动pirated</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="578"/>
@@ -462,8 +462,8 @@
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="579"/>
-        <source>Connection over Tor has been enabled. To use this feature, you need to restart ZecWallet.</source>
-        <translation>已启用Tor上的连接。 要使用此功能，您需要重新启动ZecWallet。</translation>
+        <source>Connection over Tor has been enabled. To use this feature, you need to restart PirateWallet.</source>
+        <translation>已启用Tor上的连接。 要使用此功能，您需要重新启动PirateWallet。</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="588"/>
@@ -472,23 +472,23 @@
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="589"/>
-        <source>Connection over Tor has been disabled. To fully disconnect from Tor, you need to restart ZecWallet.</source>
-        <translation>Tor上的连接已被禁用。 要完全断开与Tor的连接，您需要重新启动ZecWallet。</translation>
+        <source>Connection over Tor has been disabled. To fully disconnect from Tor, you need to restart PirateWallet.</source>
+        <translation>Tor上的连接已被禁用。 要完全断开与Tor的连接，您需要重新启动PirateWallet。</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="618"/>
-        <source>ZecWallet needs to restart to rescan/reindex. ZecWallet will now close, please restart ZecWallet to continue</source>
-        <translation>ZecWallet需要重新启动才能重新扫描/重新索引。 ZecWallet现在关闭，请重启ZecWallet以继续</translation>
+        <source>PirateWallet needs to restart to rescan/reindex. PirateWallet will now close, please restart PirateWallet to continue</source>
+        <translation>PirateWallet需要重新启动才能重新扫描/重新索引。 PirateWallet现在关闭，请重启PirateWallet以继续</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="620"/>
-        <source>Restart ZecWallet</source>
-        <translation>重启ZecWallet</translation>
+        <source>Restart PirateWallet</source>
+        <translation>重启PirateWallet</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="649"/>
-        <source>Thanks for supporting ZecWallet!</source>
-        <translation>感谢您支持ZecWallet！</translation>
+        <source>Thanks for supporting PirateWallet!</source>
+        <translation>感谢您支持PirateWallet！</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="651"/>
@@ -497,8 +497,8 @@
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="651"/>
-        <source> to support ZecWallet</source>
-        <translation> 支持ZecWallet</translation>
+        <source> to support PirateWallet</source>
+        <translation> 支持PirateWallet</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="667"/>
@@ -552,8 +552,8 @@
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="928"/>
-        <source>The keys will be imported into your connected zcashd node</source>
-        <translation>密钥将导入已连接的zcashd节点</translation>
+        <source>The keys will be imported into your connected pirated node</source>
+        <translation>密钥将导入已连接的pirated节点</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="959"/>
@@ -582,8 +582,8 @@
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1002"/>
-        <source>You need to back it up from the machine zcashd is running on</source>
-        <translation>你需要从运行zcashd的机器备份它</translation>
+        <source>You need to back it up from the machine pirated is running on</source>
+        <translation>你需要从运行pirated的机器备份它</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1006"/>
@@ -840,8 +840,8 @@ doesn&apos;t look like a z-address</source>
     </message>
     <message>
         <location filename="../src/migration.ui" line="81"/>
-        <source>If enabled, zcashd will slowly migrate your Sprout shielded funds to your Sapling address. </source>
-        <translation>如果启用，zcashd将慢慢将您的Sprout屏蔽资金迁移到您的Sapling地址。 </translation>
+        <source>If enabled, pirated will slowly migrate your Sprout shielded funds to your Sapling address. </source>
+        <translation>如果启用，pirated将慢慢将您的Sprout屏蔽资金迁移到您的Sapling地址。 </translation>
     </message>
 </context>
 <context>
@@ -861,8 +861,8 @@ doesn&apos;t look like a z-address</source>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="36"/>
-        <source>Scan this QRCode from your ZecWallet companion app to connect your phone</source>
-        <translation>从您的ZecWallet配套应用程序扫描此二维码以连接您的手机</translation>
+        <source>Scan this QRCode from your PirateWallet companion app to connect your phone</source>
+        <translation>从您的PirateWallet配套应用程序扫描此二维码以连接您的手机</translation>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="43"/>
@@ -876,13 +876,13 @@ doesn&apos;t look like a z-address</source>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="84"/>
-        <source>Allow connections over the internet via ZecWallet wormhole</source>
-        <translation>允许通过ZecWallet虫洞连接互联网</translation>
+        <source>Allow connections over the internet via PirateWallet wormhole</source>
+        <translation>允许通过PirateWallet虫洞连接互联网</translation>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="94"/>
-        <source>ZecWallet Companion App</source>
-        <translation>ZecWallet配套App</translation>
+        <source>PirateWallet Companion App</source>
+        <translation>PirateWallet配套App</translation>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="106"/>
@@ -997,46 +997,46 @@ doesn&apos;t look like a z-address</source>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="52"/>
-        <source>Starting embedded zcashd</source>
-        <translation>启动内嵌的zcashd</translation>
+        <source>Starting embedded pirated</source>
+        <translation>启动内嵌的pirated</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="62"/>
-        <source>zcashd is set to run as daemon</source>
-        <translation>zcashd设置为作为守护进程运行</translation>
+        <source>pirated is set to run as daemon</source>
+        <translation>pirated设置为作为守护进程运行</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="62"/>
-        <source>Waiting for zcashd</source>
-        <translation>等待zcashd</translation>
+        <source>Waiting for pirated</source>
+        <translation>等待pirated</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="77"/>
-        <source>You have zcashd set to start as a daemon, which can cause problems with ZecWallet
+        <source>You have pirated set to start as a daemon, which can cause problems with PirateWallet
 
-.Please remove the following line from your zcash.conf and restart ZecWallet
+.Please remove the following line from your pirate.conf and restart PirateWallet
 daemon=1</source>
-        <translation>你已经将zcashd设置为守护进程启动，这可能会导致ZecWallet出现问题
+        <translation>你已经将pirated设置为守护进程启动，这可能会导致PirateWallet出现问题
 
-。请从zcash.conf中删除以下行并重新启动ZecWallet
+。请从pirate.conf中删除以下行并重新启动PirateWallet
 daemon=1</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="82"/>
-        <source>Couldn&apos;t start the embedded zcashd.
+        <source>Couldn&apos;t start the embedded pirated.
 
 Please try restarting.
 
-If you previously started zcashd with custom arguments, you might need to reset zcash.conf.
+If you previously started pirated with custom arguments, you might need to reset pirate.conf.
 
-If all else fails, please run zcashd manually.</source>
-        <translation>无法启动内嵌的zcashd。
+If all else fails, please run pirated manually.</source>
+        <translation>无法启动内嵌的pirated。
 
 请尝试重新启动。
 
-如果您之前使用自定义参数启动了zcashd，则可能需要重置zcash.conf。
+如果您之前使用自定义参数启动了pirated，则可能需要重置pirate.conf。
 
-如果所有其他方法都失败了，请手动运行zcashd。</translation>
+如果所有其他方法都失败了，请手动运行pirated。</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="85"/>
@@ -1045,12 +1045,12 @@ If all else fails, please run zcashd manually.</source>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="93"/>
-        <source>Couldn&apos;t connect to zcashd configured in zcash.conf.
+        <source>Couldn&apos;t connect to pirated configured in pirate.conf.
 
-Not starting embedded zcashd because --no-embedded was passed</source>
-        <translation>无法连接到zcash.conf中配置的zcashd。
+Not starting embedded pirated because --no-embedded was passed</source>
+        <translation>无法连接到pirate.conf中配置的pirated。
 
-没有启动内嵌的zcashd，因为已经传了--no-embedded参数</translation>
+没有启动内嵌的pirated，因为已经传了--no-embedded参数</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="146"/>
@@ -1105,8 +1105,8 @@ Not starting embedded zcashd because --no-embedded was passed</source>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="332"/>
-        <source>zcashd error</source>
-        <translation>zcashd 出错</translation>
+        <source>pirated error</source>
+        <translation>pirated 出错</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="399"/>
@@ -1119,22 +1119,22 @@ Please set the host/port and user/password in the Edit-&gt;Settings menu.</sourc
     </message>
     <message>
         <location filename="../src/connection.cpp" line="411"/>
-        <source>Could not connect to zcashd configured in settings.
+        <source>Could not connect to pirated configured in settings.
 
 Please set the host/port and user/password in the Edit-&gt;Settings menu.</source>
-        <translation>无法连接到设置中配置的zcashd。
+        <translation>无法连接到设置中配置的pirated。
 
 请在编辑 - &gt;设置菜单中设置主机/端口和用户/密码。</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="472"/>
-        <source>Authentication failed. The username / password you specified was not accepted by zcashd. Try changing it in the Edit-&gt;Settings menu</source>
-        <translation>验证失败。 zcashd不接受您指定的用户名/密码。 请在编辑 - &gt;设置菜单中更改它</translation>
+        <source>Authentication failed. The username / password you specified was not accepted by pirated. Try changing it in the Edit-&gt;Settings menu</source>
+        <translation>验证失败。 pirated不接受您指定的用户名/密码。 请在编辑 - &gt;设置菜单中更改它</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="487"/>
-        <source>Your zcashd is starting up. Please wait.</source>
-        <translation>你的zcashd正在启动。 请耐心等待。</translation>
+        <source>Your pirated is starting up. Please wait.</source>
+        <translation>你的pirated正在启动。 请耐心等待。</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="504"/>
@@ -1260,18 +1260,18 @@ Please set the host/port and user/password in the Edit-&gt;Settings menu.</sourc
     </message>
     <message>
         <location filename="../src/rpc.cpp" line="684"/>
-        <source>Connected to zcashd</source>
-        <translation>连接到zcashd</translation>
+        <source>Connected to pirated</source>
+        <translation>连接到pirated</translation>
     </message>
     <message>
         <location filename="../src/rpc.cpp" line="687"/>
-        <source>zcashd has no peer connections</source>
-        <translation>zcashd没有节点可连接</translation>
+        <source>pirated has no peer connections</source>
+        <translation>pirated没有节点可连接</translation>
     </message>
     <message>
         <location filename="../src/rpc.cpp" line="706"/>
-        <source>There was an error connecting to zcashd. The error was</source>
-        <translation>连接到zcashd时出错。 错误是</translation>
+        <source>There was an error connecting to pirated. The error was</source>
+        <translation>连接到pirated时出错。 错误是</translation>
     </message>
     <message>
         <location filename="../src/rpc.cpp" line="1066"/>
@@ -1304,13 +1304,13 @@ Would you like to visit the releases page?</source>
     </message>
     <message>
         <location filename="../src/rpc.cpp" line="1216"/>
-        <source>Please wait for ZecWallet to exit</source>
-        <translation>请等待ZecWallet退出</translation>
+        <source>Please wait for PirateWallet to exit</source>
+        <translation>请等待PirateWallet退出</translation>
     </message>
     <message>
         <location filename="../src/rpc.cpp" line="1217"/>
-        <source>Waiting for zcashd to exit</source>
-        <translation>等待zcashd退出</translation>
+        <source>Waiting for pirated to exit</source>
+        <translation>等待pirated退出</translation>
     </message>
     <message>
         <location filename="../src/settings.cpp" line="244"/>
@@ -1367,8 +1367,8 @@ You either have unconfirmed funds or the balance is too low for an automatic mig
     </message>
     <message>
         <location filename="../src/websockets.cpp" line="359"/>
-        <source>Connected over the internet via ZecWallet wormhole service</source>
-        <translation>通过ZecWallet虫洞服务连接互联网</translation>
+        <source>Connected over the internet via PirateWallet wormhole service</source>
+        <translation>通过PirateWallet虫洞服务连接互联网</translation>
     </message>
     <message>
         <location filename="../src/websockets.cpp" line="652"/>
@@ -1513,8 +1513,8 @@ You either have unconfirmed funds or the balance is too low for an automatic mig
     </message>
     <message>
         <location filename="../src/recurringmultiple.ui" line="44"/>
-        <source>How should ZecWallet proceed?</source>
-        <translation>ZecWallet应该如何处理？</translation>
+        <source>How should PirateWallet proceed?</source>
+        <translation>PirateWallet应该如何处理？</translation>
     </message>
     <message>
         <location filename="../src/recurringmultiple.ui" line="51"/>
@@ -1659,8 +1659,8 @@ You either have unconfirmed funds or the balance is too low for an automatic mig
     </message>
     <message>
         <location filename="../src/settings.ui" line="33"/>
-        <source>zcashd connection</source>
-        <translation>zcashd连接</translation>
+        <source>pirated connection</source>
+        <translation>pirated连接</translation>
     </message>
     <message>
         <location filename="../src/settings.ui" line="62"/>
@@ -1764,8 +1764,8 @@ You either have unconfirmed funds or the balance is too low for an automatic mig
     </message>
     <message>
         <location filename="../src/settings.ui" line="301"/>
-        <source>Rescan the blockchain for any missing wallet transactions and to correct your wallet balance. This may take several hours. You need to restart ZecWallet for this to take effect</source>
-        <translation>重新扫描区块链以查找任何丢失的钱包交易并更正您的钱包余额。 这可能需要几个小时。 您需要重新启动ZecWallet才能使其生效</translation>
+        <source>Rescan the blockchain for any missing wallet transactions and to correct your wallet balance. This may take several hours. You need to restart PirateWallet for this to take effect</source>
+        <translation>重新扫描区块链以查找任何丢失的钱包交易并更正您的钱包余额。 这可能需要几个小时。 您需要重新启动PirateWallet才能使其生效</translation>
     </message>
     <message>
         <location filename="../src/settings.ui" line="311"/>
@@ -1774,8 +1774,8 @@ You either have unconfirmed funds or the balance is too low for an automatic mig
     </message>
     <message>
         <location filename="../src/settings.ui" line="345"/>
-        <source>Rebuild the entire blockchain from the genesis block, by rescanning all the block files. This may take several hours to days, depending on your hardware. You need to restart ZecWallet for this to take effect</source>
-        <translation>通过重新扫描所有区块文件，从创世块重建整个区块链。 这可能需要几个小时到几天，具体取决于您的硬件环境。 您需要重新启动ZecWallet才能使其生效</translation>
+        <source>Rebuild the entire blockchain from the genesis block, by rescanning all the block files. This may take several hours to days, depending on your hardware. You need to restart PirateWallet for this to take effect</source>
+        <translation>通过重新扫描所有区块文件，从创世块重建整个区块链。 这可能需要几个小时到几天，具体取决于您的硬件环境。 您需要重新启动PirateWallet才能使其生效</translation>
     </message>
 </context>
 <context>
@@ -1982,8 +1982,8 @@ You either have unconfirmed funds or the balance is too low for an automatic mig
     </message>
     <message>
         <location filename="../src/confirm.ui" line="183"/>
-        <source>zcashd doesn&apos;t seem to have any peers. You might not be connected to the internet, so this transaction might not work.</source>
-        <translation>zcashd似乎没有任何可连接的节点。 您可能没有连接到互联网，因此此交易可能无效。</translation>
+        <source>pirated doesn&apos;t seem to have any peers. You might not be connected to the internet, so this transaction might not work.</source>
+        <translation>pirated似乎没有任何可连接的节点。 您可能没有连接到互联网，因此此交易可能无效。</translation>
     </message>
     <message>
         <location filename="../src/confirm.ui" line="196"/>
@@ -2000,8 +2000,8 @@ You either have unconfirmed funds or the balance is too low for an automatic mig
     <name>createZcashConf</name>
     <message>
         <location filename="../src/createzcashconfdialog.ui" line="14"/>
-        <source>Configure zcash.conf</source>
-        <translation>配置 zcash.conf</translation>
+        <source>Configure pirate.conf</source>
+        <translation>配置 pirate.conf</translation>
     </message>
     <message>
         <location filename="../src/createzcashconfdialog.ui" line="20"/>
