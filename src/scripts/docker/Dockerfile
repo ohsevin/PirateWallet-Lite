@@ -3,7 +3,7 @@ LABEL Description="Ubuntu 16.04 for static Qt 5.11.2"
 
 # Dependencies of the Qt offline installer
 RUN apt-get -y update && apt-get install -y \
-    curl libdbus-1-3 libexpat1 \
+    curl libdbus-1-3 libexpat1 gnupg2 \
     libgl1-mesa-dev libglu1-mesa-dev libfontconfig1-dev libssl-dev  \
     libfreetype6 libgl1-mesa-glx libglib2.0-0 \
     libx11-6 libx11-xcb1 \
