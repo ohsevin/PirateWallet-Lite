@@ -160,7 +160,7 @@ void Controller::getInfoThenRefresh(bool force) {
 
     static bool prevCallSucceeded = false;
 
-    zrpc->fetchLatestBlock([=] (const json& reply)) {
+    zrpc->fetchLatestBlock([=] (const json& reply) {
         prevCallSucceeded = true;
 
         int curBlock = reply["height"].get<json::number_integer_t>();
@@ -181,8 +181,7 @@ void Controller::getInfoThenRefresh(bool force) {
         main->statusIcon->setToolTip(tooltip);
 
         //int version = reply["version"].get<json::string_t>();
-        int version = 1;
-        Settings::getInstance()->setZcashdVersion(version);
+        
         QString vversion = QString(APP_VERSION) % " (" % QString(__DATE__) % ")";
         ui->version->setText(QString::fromStdString(reply["version"].get<json::string_t>())); 
         ui->vendor->setText(vversion);
