@@ -232,7 +232,7 @@
    <header>memoedit.h</header>
   </customwidget>
   <customwidget>
-  <class>AddressCombo</class>
+   <class>AddressCombo</class>
    <extends>QComboBox</extends>
    <header>addresscombo.h</header>
   </customwidget>

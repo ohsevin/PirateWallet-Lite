@@ -16,6 +16,7 @@
 #include "connection.h"
 #include "requestdialog.h"
 #include "websockets.h"
+#include <QRegularExpression>
 
 using json = nlohmann::json;
 
@@ -107,6 +108,20 @@ MainWindow::MainWindow(QWidget *parent) :
             return;
 
         AppDataServer::getInstance()->connectAppDialog(this);
+    });
+
+    // Rescan
+    QObject::connect(ui->actionRescan, &QAction::triggered, [=]() {
+        // To rescan, we clear the wallet state, and then reload the connection
+        // This will start a sync, and show the scanning status. 
+        this->getRPC()->clearWallet([=] (auto) {
+            // Save the wallet
+            this->getRPC()->saveWallet([=] (auto) {
+                // Then reload the connection. The ConnectionLoader deletes itself.
+                auto cl = new ConnectionLoader(this, rpc);
+                cl->loadConnection();
+            });
+        });
     });
 
     // Address Book
@@ -419,12 +434,6 @@ void MainWindow::setupSettingsModal() {
         // Connection tab by default
         settings.tabWidget->setCurrentIndex(0);
 
-        // Enable the troubleshooting options only if using embedded zcashd
-        if (!rpc->isEmbedded()) {
-            settings.chkRescan->setEnabled(false);
-            settings.chkRescan->setToolTip(tr("You're using an external pirated. Please restart pirated with -rescan"));
-        }
-
         if (settingsDialog.exec() == QDialog::Accepted) {
             // Check for updates
             Settings::getInstance()->setCheckForUpdates(settings.chkCheckUpdates->isChecked());
@@ -433,14 +442,22 @@ void MainWindow::setupSettingsModal() {
             Settings::getInstance()->setAllowFetchPrices(settings.chkFetchPrices->isChecked());
 
             // Save the server
-            Settings::getInstance()->saveSettings(settings.txtServer->text().trimmed());
+            bool reloadConnection = false;
+            if (conf.server != settings.txtServer->currentText().trimmed()) {
+                reloadConnection = true;
+            }
+            Settings::getInstance()->saveSettings(settings.txtServer->currentText().trimmed());
 
-            if (false /* connection needs reloading?*/) {
+            if (reloadConnection) {
                 // Save settings
-                Settings::getInstance()->saveSettings(settings.txtServer->text());
-                
-                auto cl = new ConnectionLoader(this, rpc);
-                cl->loadConnection();
+                Settings::getInstance()->saveSettings(settings.txtServer->currentText());
+
+                // Save the wallet
+                getRPC()->saveWallet([=] (auto) {
+                    // Then reload the connection. The ConnectionLoader deletes itself.
+                    auto cl = new ConnectionLoader(this, rpc);
+                    cl->loadConnection();
+                });
             }
         }
     });
@@ -448,7 +465,7 @@ void MainWindow::setupSettingsModal() {
 
 void MainWindow::addressBook() {
     // Check to see if there is a target.
-    QRegExp re("Address[0-9]+", Qt::CaseInsensitive);
+    QRegularExpression re("Address[0-9]+", QRegularExpression::CaseInsensitiveOption);
     for (auto target: ui->sendToWidgets->findChildren<QLineEdit *>(re)) {
         if (target->hasFocus()) {
             AddressBook::open(this, target);
