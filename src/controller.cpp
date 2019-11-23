@@ -149,6 +149,10 @@ void Controller::processInfo(const json& info) {
     QString version = QString::fromStdString(info["version"].get<json::string_t>());
     Settings::getInstance()->setZcashdVersion(version);
 
+    QString vversion = QString(APP_VERSION) % " (" % QString(__DATE__) % ")";
+    ui->version->setText(version); 
+    ui->vendor->setText(vversion);
+
     // Recurring payments are testnet only
     if (!Settings::getInstance()->isTestnet())
         main->disableRecurring();
@@ -166,6 +170,7 @@ void Controller::getInfoThenRefresh(bool force) {
         int curBlock = reply["height"].get<json::number_integer_t>();
         bool doUpdate = force || (model->getLatestBlock() != curBlock);
         model->setLatestBlock(curBlock);
+        ui->blockheight->setText(QString::number(curBlock));
 
         main->logger->write(QString("Refresh. curblock ") % QString::number(curBlock) % ", update=" % (doUpdate ? "true" : "false") );
 
@@ -181,10 +186,6 @@ void Controller::getInfoThenRefresh(bool force) {
         main->statusIcon->setToolTip(tooltip);
 
         //int version = reply["version"].get<json::string_t>();
-        
-        QString vversion = QString(APP_VERSION) % " (" % QString(__DATE__) % ")";
-        ui->version->setText(QString::fromStdString(reply["version"].get<json::string_t>())); 
-        ui->vendor->setText(vversion);
 
         // See if recurring payments needs anything
         Recurring::getInstance()->processPending(main);
